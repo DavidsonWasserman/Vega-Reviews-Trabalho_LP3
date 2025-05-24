@@ -1,4 +1,4 @@
-module com.example.teste_trabalho {
+module com.example.trabalho_LP3 {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -11,6 +11,8 @@ module com.example.teste_trabalho {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens com.example.teste_trabalho to javafx.fxml;
-    exports com.example.teste_trabalho;
+    opens com.example.trabalho_LP3 to javafx.fxml;
+    exports com.example.trabalho_LP3;
+    exports com.example.trabalho_LP3.controllers;
+    opens com.example.trabalho_LP3.controllers to javafx.fxml;
 }

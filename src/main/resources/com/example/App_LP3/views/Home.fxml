@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="600.0" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <fx:include source="Barra.fxml" />
+    <fx:include source="../Barra.fxml" />
 
     <AnchorPane prefHeight="158.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #888, #000000);" VBox.vgrow="ALWAYS">
       <children>
          <ImageView fitHeight="265.0" fitWidth="300.0" layoutX="158.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@../../../../../../../../OneDrive/Imagens/IMG_9169(1).JPG" />
+               <Image url="@../imagens/MGS3_Cover.jpg" />
             </image>
          </ImageView>
       </children></AnchorPane>
