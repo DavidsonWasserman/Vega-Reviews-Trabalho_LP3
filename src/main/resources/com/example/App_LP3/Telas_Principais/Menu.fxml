@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.MenuController">
 
-</AnchorPane>
+
+
+    <AnchorPane style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
+      <children>
+                  <!-- MENU -->
+                  <MenuBar prefHeight="26.0" prefWidth="800.0" style="-fx-background-color: #1aa7ec;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <menus>
+                          <Menu mnemonicParsing="false" text="☰ Menu">
+                              <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#goToHome" text="Home" style="-fx-text-fill: #1aa7ec;"/>
+                                  <MenuItem mnemonicParsing="false" onAction="#goToJogos" text="Jogos" style="-fx-text-fill: #1aa7ec;"/>
+                                  <MenuItem mnemonicParsing="false" onAction="#goToJogadores" text="Jogadores" style="-fx-text-fill: #1aa7ec;"/>
+                              </items>
+                          </Menu>
+                          <Menu mnemonicParsing="false" text="Add">
+                              <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#goToAddJogo" text="Jogo" style="-fx-text-fill: #1aa7ec;"/>
+                                  <MenuItem mnemonicParsing="false" onAction="#goToAddReview" text="Review" style="-fx-text-fill: #1aa7ec;"/>
+                              </items>
+                          </Menu>
+                      </menus>
+                  </MenuBar>
+         <StackPane fx:id="mainContent" layoutY="26.0" prefHeight="574.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0" />
+      </children></AnchorPane>
+        <children />
+</VBox>

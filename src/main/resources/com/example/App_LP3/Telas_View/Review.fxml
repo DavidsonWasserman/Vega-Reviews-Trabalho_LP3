@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
-</AnchorPane>
+
+
+    <AnchorPane fx:id="mainContent" prefHeight="600.0" prefWidth="613.0" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
+        <children>
+            <Label layoutX="14.0" layoutY="50.0" prefHeight="26.0" prefWidth="54.0" text="Review:" textFill="WHITE" />
+            <TextArea layoutX="69.0" layoutY="50.0" prefHeight="167.0" prefWidth="327.0" />
+            <Label layoutX="14.0" layoutY="226.0" prefHeight="26.0" prefWidth="54.0" text="Nota:" textFill="WHITE" />
+            <TextField layoutX="69.0" layoutY="227.0" prefHeight="26.0" prefWidth="27.0" />
+         <Label layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="54.0" text="Jogo:" textFill="WHITE" />
+         <TextField layoutX="69.0" layoutY="15.0" prefHeight="26.0" prefWidth="327.0" />
+        </children>
+    </AnchorPane>
+</VBox>

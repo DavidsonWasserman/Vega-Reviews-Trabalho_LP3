@@ -1,71 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER_RIGHT" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
 
 
-    <AnchorPane fx:id="mainContent" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
+    <AnchorPane style="-fx-background-color: #333333;" VBox.vgrow="ALWAYS">
         <children>
             <!-- Top 5 Jogos -->
-            <VBox spacing="10" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+            <VBox layoutX="20.0" layoutY="153.0" spacing="10" style="-fx-background-color: rgba(0, 0, 0, 0.3); -fx-background-radius: 20;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="153.0">
                 <children>
-                    <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Jogos" />
+                    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Jogos:" textFill="#1aa7ec">
+                  <VBox.margin>
+                     <Insets left="10.0" />
+                  </VBox.margin></Label>
 
-                    <HBox alignment="CENTER_LEFT" prefHeight="142.0" prefWidth="548.0" spacing="20">
+                    <HBox alignment="CENTER_LEFT" prefHeight="142.0" prefWidth="760.0" spacing="20" VBox.vgrow="ALWAYS">
                         <children>
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Jogo1" />
+                                <Label text="Jogo1" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
 
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Jogo2" />
+                                <Label text="Jogo2" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
 
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Jogo3" />
+                                <Label text="Jogo3" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
 
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Jogo4" />
+                                <Label text="Jogo4" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
 
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Jogo5" />
+                                <Label text="Jogo5" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
                         </children>
                     </HBox>
@@ -73,60 +90,88 @@
             </VBox>
 
             <!-- Top 5 Jogadores -->
-            <VBox spacing="10" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="260.0">
+            <VBox layoutX="20.0" layoutY="373.0" prefHeight="183.0" prefWidth="760.0" spacing="10" style="-fx-background-color: rgba(0, 0, 0, 0.3); -fx-background-radius: 20;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="373.0">
                 <children>
-                    <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Jogadores" />
+                    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Jogadores:" textFill="#1aa7ec">
+                  <VBox.margin>
+                     <Insets left="10.0" />
+                  </VBox.margin></Label>
 
                     <HBox alignment="CENTER_LEFT" spacing="20">
                         <children>
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Player 1" />
+                                <Label text="Player 1" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
 
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Player 2" />
+                                <Label text="Player 2" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
 
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Player 3" />
+                                <Label text="Player 3" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
 
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Player 4" />
+                                <Label text="Player 4" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
 
                             <VBox alignment="CENTER" spacing="5">
                                 <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                        <Image url="@../imagens/HD2_Cover.jpg" />
                                     </image>
                                 </ImageView>
-                                <Label style="-fx-text-fill: white;" text="Player 5" />
+                                <Label text="Player 5" textFill="#1aa7ec" />
+                        <padding>
+                           <Insets left="50.0" />
+                        </padding>
                             </VBox>
                         </children>
                     </HBox>
                 </children>
             </VBox>
+         <Label layoutX="20.0" layoutY="31.0" prefHeight="62.0" prefWidth="529.0" text="Bem Vindo ao Vega Reviews" textFill="#1aa7ec">
+            <font>
+               <Font size="30.0" />
+            </font>
+         </Label>
+         <Label layoutX="20.0" layoutY="79.0" prefHeight="62.0" prefWidth="595.0" text="Confira abaixo os jogos mais bem avaliados e os jogadores com mais reviews publicadas!" textFill="#1aa7ec">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Label>
         </children>
     </AnchorPane>
 </VBox>

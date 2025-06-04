@@ -14,13 +14,13 @@
 
     <AnchorPane fx:id="mainContent" prefHeight="600.0" prefWidth="613.0" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
         <children>
-            <Label layoutX="17.0" layoutY="300.0" prefHeight="26.0" prefWidth="54.0" text="Review:" textFill="WHITE" />
+            <Label layoutX="17.0" layoutY="300.0" prefHeight="26.0" prefWidth="54.0" text="Review:" textFill="#1aa7ec" />
             <TextField layoutX="17.0" layoutY="24.0" prefHeight="26.0" prefWidth="382.0" promptText="Pesquisar..." />
             <TextArea layoutX="72.0" layoutY="300.0" prefHeight="167.0" prefWidth="327.0" />
-            <Button layoutX="104.0" layoutY="511.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" text="Adicionar Review" />
+            <Button layoutX="104.0" layoutY="511.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #1aa7ec;" text="Adicionar Review" />
          <ListView layoutX="72.0" layoutY="62.0" prefHeight="223.0" prefWidth="327.0" />
-         <Label layoutX="17.0" layoutY="62.0" prefHeight="18.0" prefWidth="54.0" text="Selecione:" textFill="WHITE" />
-         <Label layoutX="17.0" layoutY="476.0" prefHeight="26.0" prefWidth="54.0" text="Nota:" textFill="WHITE" />
+         <Label layoutX="17.0" layoutY="62.0" prefHeight="18.0" prefWidth="54.0" text="Selecione:" textFill="#1aa7ec" />
+         <Label layoutX="17.0" layoutY="476.0" prefHeight="26.0" prefWidth="54.0" text="Nota:" textFill="#1aa7ec" />
          <TextField layoutX="72.0" layoutY="477.0" prefHeight="26.0" prefWidth="27.0" />
         </children>
     </AnchorPane>

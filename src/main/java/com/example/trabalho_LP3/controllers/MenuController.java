@@ -2,35 +2,46 @@ package com.example.trabalho_LP3.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.layout.AnchorPane;
 import javafx.event.ActionEvent;
-
+import javafx.scene.layout.StackPane;
 import java.io.IOException;
+import java.util.ResourceBundle;
+import java.net.URL;
 
-public class HomeController {
+public class MenuController implements Initializable {
 
     @FXML
-    private AnchorPane mainContent; // <- Certifique-se de que esse ID está no Home.fxml
+    private StackPane mainContent; // <- Conecta a mudança de painel no Menu.fxml
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        loadScreen("/com/example/App_LP3/Telas_Principais/Home.fxml");
+    }
     @FXML
-    public void goToHome(ActionEvent event) {
+    private void goToHome(ActionEvent event) {
         loadScreen("/com/example/App_LP3/Telas_Principais/Home.fxml");
     }
 
     @FXML
-    public void goToJogos(ActionEvent event) {
+    private void goToJogos(ActionEvent event)throws IOException {
         loadScreen("/com/example/App_LP3/Telas_Principais/Jogos.fxml");
     }
 
     @FXML
-    public void goToJogadores(ActionEvent event) {
+    private void goToJogadores(ActionEvent event) {
         loadScreen("/com/example/App_LP3/Telas_Principais/Jogadores.fxml");
     }
 
     @FXML
-    public void goToReviews(ActionEvent event) {
-        loadScreen("/com/example/App_LP3/Telas_Principais/Reviews.fxml");
+    private void goToAddJogo(ActionEvent event) {
+        loadScreen("/com/example/App_LP3/Telas_Principais/Add_Jogo.fxml");
+    }
+
+    @FXML
+    private void goToAddReview(ActionEvent event) {
+        loadScreen("/com/example/App_LP3/Telas_Principais/Add_Reviews.fxml");
     }
 
     private void loadScreen(String fxmlPath) {
