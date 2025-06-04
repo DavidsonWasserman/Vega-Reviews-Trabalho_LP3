@@ -1,64 +1,46 @@
 package com.example.trabalho_LP3.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.layout.AnchorPane;
 import javafx.event.ActionEvent;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class MenuController implements Initializable {
+import java.io.IOException;
 
-    private HomeController homeController;
+public class HomeController {
 
     @FXML
-    private ContextMenu menuContext;
+    private AnchorPane mainContent; // <- Certifique-se de que esse ID está no Home.fxml
 
     @FXML
-    private Button menuButton;
-    @FXML
-    private TextField searchField;
-
-    public void setHomeController(HomeController homeController) {
-        this.homeController = homeController;
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void goToHome(ActionEvent event) {
+        loadScreen("/com/example/App_LP3/Telas_Principais/Home.fxml");
     }
 
     @FXML
-    private void abrirMenu(ActionEvent event) {
-        if (menuContext != null && menuButton != null) {
-            menuContext.show(menuButton, javafx.geometry.Side.BOTTOM, 5, 0);
-        }
+    public void goToJogos(ActionEvent event) {
+        loadScreen("/com/example/App_LP3/Telas_Principais/Jogos.fxml");
     }
 
     @FXML
-    private void navigateToHome() {
-        if (homeController != null) {
-            homeController.loadPage("/com/example/App_LP3/views/Home.fxml");
-        }
+    public void goToJogadores(ActionEvent event) {
+        loadScreen("/com/example/App_LP3/Telas_Principais/Jogadores.fxml");
     }
 
     @FXML
-    private void navigateToGames() {
-        if (homeController != null) {
-            homeController.loadPage("/com/example/App_LP3/views/Jogos.fxml");
-        }
+    public void goToReviews(ActionEvent event) {
+        loadScreen("/com/example/App_LP3/Telas_Principais/Reviews.fxml");
     }
 
-    @FXML
-    private void navigateToPlayers() {
-        if (homeController != null) {
-            homeController.loadPage("/com/example/App_LP3/views/Jogadores.fxml");
-        }
-    }
-
-    @FXML
-    private void navigateToProfile() {
-        if (homeController != null) {
-            homeController.loadPage("/com/example/App_LP3/views/MeuPerfil.fxml");
+    private void loadScreen(String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent screen = loader.load();
+            mainContent.getChildren().setAll(screen);
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar a tela: " + fxmlPath);
+            e.printStackTrace();
         }
     }
 }

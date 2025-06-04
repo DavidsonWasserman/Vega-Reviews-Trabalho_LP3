@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+
+
+    <AnchorPane fx:id="mainContent" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
+        <children>
+            <!-- Top 5 Jogos -->
+            <VBox spacing="10" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+                <children>
+                    <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Jogos" />
+
+                    <HBox alignment="CENTER_LEFT" prefHeight="142.0" prefWidth="548.0" spacing="20">
+                        <children>
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Jogo1" />
+                            </VBox>
+
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Jogo2" />
+                            </VBox>
+
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Jogo3" />
+                            </VBox>
+
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Jogo4" />
+                            </VBox>
+
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Jogo5" />
+                            </VBox>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+
+            <!-- Top 5 Jogadores -->
+            <VBox spacing="10" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="260.0">
+                <children>
+                    <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Jogadores" />
+
+                    <HBox alignment="CENTER_LEFT" spacing="20">
+                        <children>
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Player 1" />
+                            </VBox>
+
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Player 2" />
+                            </VBox>
+
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Player 3" />
+                            </VBox>
+
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Player 4" />
+                            </VBox>
+
+                            <VBox alignment="CENTER" spacing="5">
+                                <ImageView fitHeight="120" fitWidth="80" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../imagens/MGS3_Cover.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label style="-fx-text-fill: white;" text="Player 5" />
+                            </VBox>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </children>
+    </AnchorPane>
+</VBox>
