@@ -5,22 +5,27 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.JogadorController">
 
 
 
     <AnchorPane fx:id="mainContent" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
         <children>
-            <ImageView fitHeight="168.0" fitWidth="107.0" layoutX="24.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="50.0" />
-            <TextArea layoutX="145.0" layoutY="103.0" prefHeight="184.0" prefWidth="510.0" />
-            <Label layoutX="144.0" layoutY="78.0" text="Sobre mim:" textFill="WHITE" />
-            <Label layoutX="144.0" layoutY="50.0" prefHeight="18.0" prefWidth="45.0" text="Nome:" textFill="WHITE" />
-            <TextField layoutX="190.0" layoutY="46.0" prefHeight="26.0" prefWidth="386.0" />
+         <Pane layoutX="-26.0" layoutY="3.0" prefHeight="125.0" prefWidth="125.0" style="-fx-background-color: #1aa7ec;" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="46.0">
+            <children>
+                  <ImageView fx:id="imageView" fitHeight="120.0" fitWidth="120.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+         </Pane>
+            <TextArea fx:id="sobremimArea" layoutX="145.0" layoutY="103.0" prefHeight="184.0" prefWidth="510.0" />
+            <Label layoutX="144.0" layoutY="78.0" text="Sobre mim:" textFill="#1aa7ec" />
+            <Label layoutX="144.0" layoutY="50.0" prefHeight="18.0" prefWidth="45.0" text="Nome:" textFill="#1aa7ec" />
+            <TextField fx:id="nicknameField" layoutX="190.0" layoutY="46.0" prefHeight="26.0" prefWidth="386.0" />
          <TextArea layoutX="145.0" layoutY="327.0" prefHeight="184.0" prefWidth="510.0" />
-         <Label layoutX="140.0" layoutY="300.0" text="Reviews:" textFill="WHITE">
+         <Label layoutX="140.0" layoutY="300.0" text="Reviews:" textFill="#1aa7ec">
             <font>
                <Font size="18.0" />
             </font>

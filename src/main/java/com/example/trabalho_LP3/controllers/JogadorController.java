@@ -7,13 +7,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.sql.*;
 
-public class JogoController {
+public class JogadorController {
 
-    @FXML private TextField nomeField;
-    @FXML private TextField desenvolvedoraField;
-    @FXML private TextField generoField;
-    @FXML private TextField notaField;
-    @FXML private TextArea sinopseArea;
+    @FXML private TextField nicknameField;
+    @FXML private TextArea sobremimArea;
     @FXML private ImageView imageView;
 
     private Connection connection;
@@ -27,26 +24,20 @@ public class JogoController {
         }
     }
 
-    public void carregarDetalhes(String nomeJogo) {
-        String query = "SELECT * FROM jogos WHERE nome = ?";
+    public void carregarDetalhes(String nickName) {
+        String query = "SELECT * FROM usuarios WHERE nickname = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, nomeJogo);
+            stmt.setString(1, nickName);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                nomeField.setText(rs.getString("nome"));
-                desenvolvedoraField.setText(rs.getString("desenvolvedora"));
-                generoField.setText(rs.getString("genero"));
-                notaField.setText(rs.getString("nota_media"));
-                sinopseArea.setText(rs.getString("sinopse"));
+                nicknameField.setText(rs.getString("nickname"));
+                sobremimArea.setText(rs.getString("sobre_mim"));
 
-                String caminhoImagem = rs.getString("imagem");
-                nomeField.setDisable(true);
-                desenvolvedoraField.setDisable(true);
-                generoField.setDisable(true);
-                notaField.setDisable(true);
-                sinopseArea.setDisable(true);
+                String caminhoImagem = rs.getString("foto_perfil");
+                nicknameField.setDisable(true);
+                sobremimArea.setDisable(true);
                 if (caminhoImagem != null && !caminhoImagem.isEmpty()) {
-                    String caminhoCompleto = "/com/example/App_LP3/imagens/covers/" + caminhoImagem;
+                    String caminhoCompleto = "/com/example/App_LP3/imagens/pfp/" + caminhoImagem;
 
                     try {
                         System.out.println("Caminho da imagem: " + getClass().getResource(caminhoCompleto));

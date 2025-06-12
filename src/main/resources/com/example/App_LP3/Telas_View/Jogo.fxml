@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -15,7 +16,11 @@
 
     <AnchorPane fx:id="mainContent" prefHeight="677.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
         <children>
-         <ImageView fx:id="imageView" fitHeight="168.0" fitWidth="107.0" layoutX="24.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="50.0" />
+         <Pane layoutX="24.0" layoutY="29.0" prefHeight="166.0" prefWidth="112.0" style="-fx-background-color: #1aa7ec;" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="50.0">
+            <children>
+               <ImageView fx:id="imageView" fitHeight="168.0" fitWidth="107.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+         </Pane>
          <TextArea fx:id="sinopseArea" layoutX="147.0" layoutY="162.0" prefHeight="184.0" prefWidth="510.0" />
          <Label layoutX="147.0" layoutY="144.0" text="Sinopse:" textFill="#1aa7ec" />
          <Label layoutX="145.0" layoutY="50.0" prefHeight="18.0" prefWidth="45.0" text="Nome:" textFill="#1aa7ec" />
