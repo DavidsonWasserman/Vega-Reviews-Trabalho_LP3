@@ -8,27 +8,33 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.MenuController">
-
-
-
     <AnchorPane style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
       <children>
                   <!-- MENU -->
                   <MenuBar prefHeight="26.0" prefWidth="800.0" style="-fx-background-color: #1aa7ec;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                       <menus>
-                          <Menu mnemonicParsing="false" text="☰ Menu">
-                              <items>
-                                  <MenuItem mnemonicParsing="false" onAction="#goToHome" text="Home" style="-fx-text-fill: #1aa7ec;"/>
-                                  <MenuItem mnemonicParsing="false" onAction="#goToJogos" text="Jogos" style="-fx-text-fill: #1aa7ec;"/>
-                                  <MenuItem mnemonicParsing="false" onAction="#goToJogadores" text="Jogadores" style="-fx-text-fill: #1aa7ec;"/>
-                              </items>
-                          </Menu>
-                          <Menu mnemonicParsing="false" text="Add">
-                              <items>
-                                  <MenuItem mnemonicParsing="false" onAction="#goToAddJogo" text="Jogo" style="-fx-text-fill: #1aa7ec;"/>
-                                  <MenuItem mnemonicParsing="false" onAction="#goToAddReview" text="Review" style="-fx-text-fill: #1aa7ec;"/>
-                              </items>
-                          </Menu>
+                          <Menu mnemonicParsing="false" text="Home">
+                  <items>
+                     <MenuItem mnemonicParsing="false" onAction="#goToHome" style="-fx-text-fill: #1aa7ec;" text="Página Inicial" />
+                  </items></Menu>
+                          <Menu mnemonicParsing="false" text="Jogos">
+                  <items>
+                     <MenuItem mnemonicParsing="false" onAction="#goToJogos" style="-fx-text-fill: #1aa7ec;" text="Ver Jogos" />
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Listas" />
+                     <MenuItem mnemonicParsing="false" onAction="#goToAddJogo" style="-fx-text-fill: #1aa7ec;" text="Adicionar Jogo" />
+                  </items></Menu>
+               <Menu mnemonicParsing="false" text="Jogadores">
+                  <items>
+                     <MenuItem mnemonicParsing="false" onAction="#goToJogadores" style="-fx-text-fill: #1aa7ec;" text="Ver Jogadores" />
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Grupos" />
+                  </items></Menu>
+               <Menu mnemonicParsing="false" text="Meu Perfil">
+                  <items>
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Meus Grupos" />
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Minhas Listas" />
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Editar Perfil" />
+                  </items>
+               </Menu>
                       </menus>
                   </MenuBar>
          <StackPane fx:id="mainContent" layoutY="26.0" prefHeight="574.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0" />

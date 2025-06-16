@@ -67,26 +67,37 @@ public class JogosController implements Initializable {
 
     private void connectToDatabase() {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco_projeto_lp3", "adminlp3", "adminlp3");
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/banco_projeto_lp3",
+                    "adminlp3", "adminlp3");
+            System.out.println("Conectado ao banco!");
         } catch (SQLException e) {
+            System.out.println("Erro ao conectar ao banco");
             e.printStackTrace();
         }
     }
 
     private void carregarJogos(String filtro) {
         campoExibe.getItems().clear();
-        if (filtro == null || filtro.isEmpty()){
-            return;
+
+        String query;
+        if (filtro == null || filtro.trim().isEmpty()) {
+            query = "SELECT nome FROM jogos";
+        } else {
+            query = "SELECT nome FROM jogos WHERE LOWER(nome) LIKE ?";
         }
-        String query = "SELECT nome FROM jogos WHERE LOWER(nome) LIKE ?";
+
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, filtro.toLowerCase() + "%");
+            if (filtro != null && !filtro.trim().isEmpty()) {
+                stmt.setString(1, filtro.toLowerCase() + "%");
+            }
+
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                campoExibe.getItems().add(rs.getString("nome"));
+                String nome = rs.getString("nome");
+                campoExibe.getItems().add(nome);
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

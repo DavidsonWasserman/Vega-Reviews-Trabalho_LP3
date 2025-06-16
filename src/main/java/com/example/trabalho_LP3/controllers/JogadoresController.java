@@ -75,18 +75,24 @@ public class JogadoresController implements Initializable {
 
     private void carregarJogador(String filtro) {
         campoExibe.getItems().clear();
-        if (filtro == null || filtro.isEmpty()){
-            return;
-        }
-        String query = "SELECT nickname FROM usuarios WHERE LOWER(nickname) LIKE ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, filtro.toLowerCase() + "%");
-            ResultSet rs = stmt.executeQuery();
 
-            while (rs.next()) {
-                campoExibe.getItems().add(rs.getString("nickname"));
+        String query;
+        if (filtro == null || filtro.trim().isEmpty()) {
+            query = "SELECT nickname FROM usuarios";
+        } else {
+            query = "SELECT nickname FROM usuarios WHERE LOWER(nickname) LIKE ?";
+        }
+
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            if (filtro != null && !filtro.trim().isEmpty()) {
+                stmt.setString(1, filtro.toLowerCase() + "%");
             }
 
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                String nome = rs.getString("nickname");
+                campoExibe.getItems().add(nome);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
