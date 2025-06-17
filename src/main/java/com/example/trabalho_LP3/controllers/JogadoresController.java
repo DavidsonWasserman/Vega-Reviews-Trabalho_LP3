@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,13 +29,11 @@ public class JogadoresController implements Initializable {
         carregarJogador(campoBusca.getText());
     }
 
-    @FXML
-    private TextField campoBusca;
-
-    @FXML
-    private ListView<String> campoExibe;
+    @FXML private TextField campoBusca;
+    @FXML private ListView<String> campoExibe;
 
     private Connection connection;
+    private StackPane mainContent;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -58,22 +57,22 @@ public class JogadoresController implements Initializable {
 
     private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
 
+    public void setMainContent(StackPane mainContent){
+        this.mainContent = mainContent;
+    }
     // Abre outra tela com mais info(Jogador.fxml)
     private void abrirDetalhesJogador(String nickName) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Jogador.fxml"));
             Parent root = loader.load();
-
-
             JogadorController controller = loader.getController();
             controller.carregarDetalhes(nickName);
 
-            Stage stage = new Stage();
-            stage.setTitle("Detalhes do Jogador");
-            Scene scene = new Scene(root, 675, 600);
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
+            if (mainContent != null) {
+                mainContent.getChildren().setAll(root);
+            } else {
+                System.out.println("mainContent está null!");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

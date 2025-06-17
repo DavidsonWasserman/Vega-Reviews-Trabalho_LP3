@@ -39,11 +39,6 @@ public class MenuController implements Initializable {
         loadScreen("/com/example/App_LP3/Telas_Add/Add_Jogo.fxml");
     }
 
-    @FXML
-    private void goToAddReview(ActionEvent event) {
-        loadScreen("/com/example/App_LP3/Telas_Add/Add_Reviews.fxml");
-    }
-
     private void loadScreen(String fxmlPath) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
@@ -52,6 +47,8 @@ public class MenuController implements Initializable {
             Object controller = loader.getController();
             if (controller instanceof JogosController){
                 ((JogosController) controller).setMainContent(mainContent);
+            } else if (controller instanceof JogadoresController) {
+                ((JogadoresController) controller).setMainContent(mainContent);
             }
             mainContent.getChildren().setAll(screen);
         } catch (IOException e) {

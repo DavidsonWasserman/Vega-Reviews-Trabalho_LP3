@@ -20,50 +20,50 @@
          <children>
             <VBox alignment="CENTER" maxHeight="485.0" maxWidth="600.0">
                <children>
-                  <HBox minHeight="100.0" minWidth="510.0" prefHeight="100.0" prefWidth="510.0">
+                  <HBox minHeight="150.0" minWidth="510.0" prefHeight="100.0" prefWidth="510.0">
                      <children>
-                        <Pane minHeight="103.0" minWidth="70.0" prefHeight="103.0" prefWidth="70.0" style="-fx-background-color: #1aa7ec;" HBox.hgrow="NEVER">
+                        <Pane minHeight="140.0" minWidth="100.0" prefHeight="140.0" prefWidth="100.0" style="-fx-background-color: #1aa7ec;" HBox.hgrow="NEVER">
                            <children>
-                              <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="80.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageView" fitHeight="145.0" fitWidth="98.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                         <VBox prefHeight="100.0" prefWidth="374.0">
                            <children>
                               <HBox prefHeight="26.0" prefWidth="801.0">
                                  <children>
-                                    <Label prefHeight="18.0" prefWidth="90.0" text="Nome:" textFill="#1aa7ec" />
-                                    <TextField fx:id="nomeField" prefHeight="26.0" prefWidth="314.0" />
-                                    <HBox prefHeight="26.0" prefWidth="126.0">
-                                       <children>
-                                          <Label prefHeight="18.0" prefWidth="128.0" text="Nota:" textFill="#1aa7ec" />
-                                          <TextField fx:id="notaField" prefHeight="26.0" prefWidth="125.0" />
-                                       </children>
-                                       <HBox.margin>
-                                          <Insets left="3.0" />
-                                       </HBox.margin>
-                                    </HBox>
+                                    <Label prefHeight="18.0" prefWidth="38.0" text="Nome:" textFill="#1aa7ec" />
+                                    <TextField fx:id="nomeField" prefHeight="26.0" prefWidth="307.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets left="5.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
+                              <HBox prefWidth="200.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="90.0" text="Desenvolvedora:" textFill="#1aa7ec" />
-                                    <TextField fx:id="desenvolvedoraField" prefHeight="26.0" prefWidth="221.0" />
+                                    <TextField fx:id="desenvolvedoraField" prefHeight="26.0" prefWidth="254.0" />
                                  </children>
                                  <VBox.margin>
-                                    <Insets left="5.0" top="5.0" />
+                                    <Insets bottom="5.0" left="5.0" top="5.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0">
+                              <HBox prefHeight="33.0" prefWidth="370.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="45.0" text="Gênero:" textFill="#1aa7ec" />
-                                    <TextField fx:id="generoField" prefHeight="26.0" prefWidth="268.0" />
+                                    <TextField fx:id="generoField" prefHeight="26.0" prefWidth="298.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets left="5.0" />
                                  </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="126.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="30.0" text="Nota:" textFill="#1aa7ec" />
+                                    <TextField fx:id="notaField" prefHeight="26.0" prefWidth="37.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
                               </HBox>
                            </children>
                         </VBox>
