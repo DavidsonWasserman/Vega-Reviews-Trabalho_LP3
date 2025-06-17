@@ -4,11 +4,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 import javafx.scene.control.MenuItem;
 import java.io.IOException;
 import java.net.URL;
@@ -24,7 +22,6 @@ public class JogosController implements Initializable {
     @FXML private TextField campoBusca;
     @FXML private ListView<String> campoExibe;
 
-    //Botao para ordernar a lista
     @FXML
     private void ordenarAZ() {
         ordemAtual = "AZ";
@@ -91,7 +88,6 @@ public class JogosController implements Initializable {
             } else {
                 System.out.println("mainContent está null!");
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -136,7 +132,6 @@ public class JogosController implements Initializable {
                 String nome = rs.getString("nome");
                 campoExibe.getItems().add(nome);
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

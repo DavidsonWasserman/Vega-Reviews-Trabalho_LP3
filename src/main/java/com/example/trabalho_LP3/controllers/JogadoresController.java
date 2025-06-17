@@ -17,6 +17,18 @@ import java.util.ResourceBundle;
 public class JogadoresController implements Initializable {
 
     @FXML
+    private void ordenarAZ() {
+        ordemAtual = "AZ";
+        carregarJogador(campoBusca.getText());
+    }
+
+    @FXML
+    private void ordenarZA() {
+        ordemAtual = "ZA";
+        carregarJogador(campoBusca.getText());
+    }
+
+    @FXML
     private TextField campoBusca;
 
     @FXML
@@ -43,6 +55,8 @@ public class JogadoresController implements Initializable {
             }
         });
     }
+
+    private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
 
     // Abre outra tela com mais info(Jogador.fxml)
     private void abrirDetalhesJogador(String nickName) {
@@ -76,15 +90,20 @@ public class JogadoresController implements Initializable {
     private void carregarJogador(String filtro) {
         campoExibe.getItems().clear();
 
-        String query;
-        if (filtro == null || filtro.trim().isEmpty()) {
-            query = "SELECT nickname FROM usuarios";
-        } else {
-            query = "SELECT nickname FROM usuarios WHERE LOWER(nickname) LIKE ?";
+        StringBuilder query = new StringBuilder("SELECT nickname FROM usuarios");
+        boolean temFiltro = filtro != null && !filtro.trim().isEmpty();
+
+        if (temFiltro) {
+            query.append(" WHERE LOWER(nickname) LIKE ?");
         }
 
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            if (filtro != null && !filtro.trim().isEmpty()) {
+        switch (ordemAtual) {
+            case "AZ" -> query.append(" ORDER BY nickname ASC");
+            case "ZA" -> query.append(" ORDER BY nickname DESC");
+        }
+
+        try (PreparedStatement stmt = connection.prepareStatement(query.toString())) {
+            if (temFiltro) {
                 stmt.setString(1, filtro.toLowerCase() + "%");
             }
 

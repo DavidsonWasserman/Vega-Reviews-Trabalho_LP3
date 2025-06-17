@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
@@ -83,7 +84,14 @@
                   <HBox minHeight="150.0" minWidth="64.0" prefHeight="150.0" prefWidth="444.0">
                      <children>
                         <Label text="Reviews:" textFill="#1aa7ec" />
-                        <ListView prefHeight="150.0" prefWidth="410.0" />
+                        <ScrollPane style="-fx-background-color: #1aa7ec; -fx-padding: 0;">
+                           <content>
+                              <ListView prefHeight="150.0" prefWidth="410.0" />
+                           </content>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ScrollPane>
                      </children>
                      <VBox.margin>
                         <Insets top="10.0" />

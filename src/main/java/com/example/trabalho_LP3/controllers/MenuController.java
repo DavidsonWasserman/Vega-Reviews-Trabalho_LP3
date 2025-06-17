@@ -36,12 +36,12 @@ public class MenuController implements Initializable {
 
     @FXML
     private void goToAddJogo(ActionEvent event) {
-        loadScreen("/com/example/App_LP3/Telas_Principais/Add_Jogo.fxml");
+        loadScreen("/com/example/App_LP3/Telas_Add/Add_Jogo.fxml");
     }
 
     @FXML
     private void goToAddReview(ActionEvent event) {
-        loadScreen("/com/example/App_LP3/Telas_Principais/Add_Reviews.fxml");
+        loadScreen("/com/example/App_LP3/Telas_Add/Add_Reviews.fxml");
     }
 
     private void loadScreen(String fxmlPath) {

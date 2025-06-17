@@ -31,7 +31,7 @@ CREATE TABLE `jogos` (
   `nota_media` decimal(3,1) DEFAULT '0.0',
   `imagem` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `usuarios` (
   `quantidade_de_reviews` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nickname` (`nickname`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Vega','senha','jogador de jogos','Vega_PFP.jpg',NULL);
+INSERT INTO `usuarios` VALUES (1,'Vega','senha','jogador de jogos','Vega_PFP.jpg',NULL),(2,'usuario1','senha1','eu sou o 1','Vega_PFP.jpg',1),(3,'usuario2','senha2','eu sou o 2','Vega_PFP.jpg',2),(4,'usuario3','senha3','eu sou o 3','Vega_PFP.jpg',3),(5,'usuario4','senha4','eu sou o 4','Vega_PFP.jpg',4),(6,'usuario5','senha5','eu sou o 5','Vega_PFP.jpg',5),(7,'usuario6','senha6','eu sou o 6','Vega_PFP.jpg',6),(8,'usuario7','senha7','eu sou o 7','Vega_PFP.jpg',7);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -113,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-15 20:58:30
+-- Dump completed on 2025-06-17 11:49:52
