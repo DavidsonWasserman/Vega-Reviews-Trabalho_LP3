@@ -1,10 +1,16 @@
 package com.example.trabalho_LP3.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+
+import java.io.IOException;
 import java.sql.*;
 
 public class JogoController {
@@ -15,6 +21,11 @@ public class JogoController {
     @FXML private TextField notaField;
     @FXML private TextArea sinopseArea;
     @FXML private ImageView imageView;
+    @FXML private StackPane pagContent;
+
+    @FXML private void goToJogos(ActionEvent event)throws IOException {
+        loadScreen("/com/example/App_LP3/Telas_Principais/Jogos.fxml");
+    }
 
     private Connection connection;
 
@@ -23,6 +34,22 @@ public class JogoController {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco_projeto_lp3", "adminlp3", "adminlp3");
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadScreen(String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent screen = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof JogosController){
+                ((JogosController) controller).setMainContent(pagContent);
+            }
+            pagContent.getChildren().setAll(screen);
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar a tela: " + fxmlPath);
             e.printStackTrace();
         }
     }

@@ -20,19 +20,15 @@
                           <Menu mnemonicParsing="false" text="Jogos">
                   <items>
                      <MenuItem mnemonicParsing="false" onAction="#goToJogos" style="-fx-text-fill: #1aa7ec;" text="Ver Jogos" />
-                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Listas" />
                      <MenuItem mnemonicParsing="false" onAction="#goToAddJogo" style="-fx-text-fill: #1aa7ec;" text="Adicionar Jogo" />
                   </items></Menu>
                <Menu mnemonicParsing="false" text="Jogadores">
                   <items>
                      <MenuItem mnemonicParsing="false" onAction="#goToJogadores" style="-fx-text-fill: #1aa7ec;" text="Ver Jogadores" />
-                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Grupos" />
                   </items></Menu>
                <Menu mnemonicParsing="false" text="Meu Perfil">
                   <items>
-                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Meus Grupos" />
-                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Minhas Listas" />
-                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Editar Perfil" />
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Perfil" />
                   </items>
                </Menu>
                       </menus>

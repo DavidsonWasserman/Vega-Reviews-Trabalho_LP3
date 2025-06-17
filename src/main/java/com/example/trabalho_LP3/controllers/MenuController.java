@@ -48,6 +48,11 @@ public class MenuController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent screen = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof JogosController){
+                ((JogosController) controller).setMainContent(mainContent);
+            }
             mainContent.getChildren().setAll(screen);
         } catch (IOException e) {
             System.out.println("Erro ao carregar a tela: " + fxmlPath);

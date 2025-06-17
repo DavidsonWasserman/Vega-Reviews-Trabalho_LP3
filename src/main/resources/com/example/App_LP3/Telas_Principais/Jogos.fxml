@@ -52,12 +52,12 @@
                            </HBox.margin>
                             </Label>
                                <Region HBox.hgrow="ALWAYS" />
-                        <MenuButton alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Classificar por:">
+                        <MenuButton fx:id="menuClassificar" alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Classificar por:">
                           <items>
-                            <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="A-Z" />
-                            <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Z-A" />
-                              <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Maior Nota" />
-                              <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Menor Nota" />
+                              <MenuItem fx:id="itemAZ" onAction="#ordenarAZ" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="A-Z" />
+                              <MenuItem fx:id="itemZA" onAction="#ordenarZA" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Z-A" />
+                              <MenuItem fx:id="itemMaiorNota" onAction="#ordenarMaiorNota" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Maior Nota" />
+                              <MenuItem fx:id="itemMenorNota" onAction="#ordenarMenorNota" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Menor Nota" />
                           </items>
                            <HBox.margin>
                               <Insets right="10.0" top="5.0" />

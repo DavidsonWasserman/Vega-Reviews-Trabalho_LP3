@@ -7,8 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
+import javafx.scene.control.MenuItem;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -16,12 +17,39 @@ import java.util.ResourceBundle;
 
 public class JogosController implements Initializable {
 
+    @FXML private MenuItem itemAZ;
+    @FXML private MenuItem itemZA;
+    @FXML private MenuItem itemMaiorNota;
+    @FXML private MenuItem itemMenorNota;
+    @FXML private TextField campoBusca;
+    @FXML private ListView<String> campoExibe;
+
+    //Botao para ordernar a lista
     @FXML
-    private TextField campoBusca;
+    private void ordenarAZ() {
+        ordemAtual = "AZ";
+        carregarJogos(campoBusca.getText());
+    }
 
     @FXML
-    private ListView<String> campoExibe;
+    private void ordenarZA() {
+        ordemAtual = "ZA";
+        carregarJogos(campoBusca.getText());
+    }
 
+    @FXML
+    private void ordenarMaiorNota() {
+        ordemAtual = "MAIOR";
+        carregarJogos(campoBusca.getText());
+    }
+
+    @FXML
+    private void ordenarMenorNota() {
+        ordemAtual = "MENOR";
+        carregarJogos(campoBusca.getText());
+    }
+
+    private StackPane mainContent;
     private Connection connection;
 
     @Override
@@ -44,22 +72,26 @@ public class JogosController implements Initializable {
         });
     }
 
+    private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
+
+    public void setMainContent(StackPane mainContent){
+        this.mainContent = mainContent;
+    }
+
     // Abre outra tela com mais info(jogo.fxml)
     private void abrirDetalhesJogo(String nomeJogo) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Jogo.fxml"));
             Parent root = loader.load();
-
-
             JogoController controller = loader.getController();
             controller.carregarDetalhes(nomeJogo);
 
-            Stage stage = new Stage();
-            stage.setTitle("Detalhes do Jogo");
-            Scene scene = new Scene(root, 675, 600);
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
+            if (mainContent != null) {
+                mainContent.getChildren().setAll(root);
+            } else {
+                System.out.println("mainContent está null!");
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -80,24 +112,31 @@ public class JogosController implements Initializable {
     private void carregarJogos(String filtro) {
         campoExibe.getItems().clear();
 
-        String query;
-        if (filtro == null || filtro.trim().isEmpty()) {
-            query = "SELECT nome FROM jogos";
-        } else {
-            query = "SELECT nome FROM jogos WHERE LOWER(nome) LIKE ?";
+        StringBuilder query = new StringBuilder("SELECT nome FROM jogos");
+        boolean temFiltro = filtro != null && !filtro.trim().isEmpty();
+
+        if (temFiltro) {
+            query.append(" WHERE LOWER(nome) LIKE ?");
         }
 
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            if (filtro != null && !filtro.trim().isEmpty()) {
+        switch (ordemAtual) {
+            case "AZ" -> query.append(" ORDER BY nome ASC");
+            case "ZA" -> query.append(" ORDER BY nome DESC");
+            case "MAIOR" -> query.append(" ORDER BY nota_media DESC");
+            case "MENOR" -> query.append(" ORDER BY nota_media ASC");
+        }
+
+        try (PreparedStatement stmt = connection.prepareStatement(query.toString())) {
+            if (temFiltro) {
                 stmt.setString(1, filtro.toLowerCase() + "%");
             }
 
             ResultSet rs = stmt.executeQuery();
-
             while (rs.next()) {
                 String nome = rs.getString("nome");
                 campoExibe.getItems().add(nome);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

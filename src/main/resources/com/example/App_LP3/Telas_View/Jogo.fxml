@@ -1,42 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.JogoController">
-
-
-
-    <AnchorPane fx:id="mainContent" prefHeight="677.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
-        <children>
-         <Pane layoutX="24.0" layoutY="29.0" prefHeight="166.0" prefWidth="112.0" style="-fx-background-color: #1aa7ec;" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="50.0">
-            <children>
-               <ImageView fx:id="imageView" fitHeight="168.0" fitWidth="107.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
-            </children>
-         </Pane>
-         <TextArea fx:id="sinopseArea" layoutX="147.0" layoutY="162.0" prefHeight="184.0" prefWidth="510.0" />
-         <Label layoutX="147.0" layoutY="144.0" text="Sinopse:" textFill="#1aa7ec" />
-         <Label layoutX="145.0" layoutY="50.0" prefHeight="18.0" prefWidth="45.0" text="Nome:" textFill="#1aa7ec" />
-         <Label layoutX="146.0" layoutY="111.0" prefHeight="18.0" prefWidth="45.0" text="Gênero:" textFill="#1aa7ec" />
-         <Label layoutX="145.0" layoutY="78.0" prefHeight="18.0" prefWidth="90.0" text="Desenvolvedora:" textFill="#1aa7ec" />
-         <Label layoutX="579.0" layoutY="51.0" prefHeight="18.0" prefWidth="32.0" text="Nota:" textFill="#1aa7ec" />
-         <TextField fx:id="nomeField" layoutX="190.0" layoutY="47.0" prefHeight="26.0" prefWidth="386.0" />
-         <TextField fx:id="desenvolvedoraField" layoutX="236.0" layoutY="75.0" prefHeight="26.0" prefWidth="340.0" />
-         <TextField fx:id="generoField" layoutX="192.0" layoutY="108.0" prefHeight="26.0" prefWidth="205.0" />
-         <TextField fx:id="notaField" layoutX="611.0" layoutY="47.0" prefHeight="26.0" prefWidth="45.0" />
-         <Label layoutX="146.0" layoutY="346.0" prefHeight="26.0" prefWidth="70.0" text="Reviews:" textFill="#1aa7ec">
-            <font>
-               <Font size="18.0" />
-            </font>
-         </Label>
-         <ListView layoutX="147.0" layoutY="373.0" prefHeight="200.0" prefWidth="510.0" />
-        </children>
-    </AnchorPane>
-</VBox>
+<StackPane fx:id="pagContent" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.JogoController">
+   <children>
+      <VBox alignment="TOP_CENTER" maxHeight="600.0" maxWidth="800.0" spacing="30.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 20;">
+         <children>
+            <VBox alignment="CENTER" maxHeight="485.0" maxWidth="600.0">
+               <children>
+                  <HBox minHeight="100.0" minWidth="510.0" prefHeight="100.0" prefWidth="510.0">
+                     <children>
+                        <Pane minHeight="103.0" minWidth="70.0" prefHeight="103.0" prefWidth="70.0" style="-fx-background-color: #1aa7ec;" HBox.hgrow="NEVER">
+                           <children>
+                              <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="80.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                        <VBox prefHeight="100.0" prefWidth="374.0">
+                           <children>
+                              <HBox prefHeight="26.0" prefWidth="801.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="90.0" text="Nome:" textFill="#1aa7ec" />
+                                    <TextField fx:id="nomeField" prefHeight="26.0" prefWidth="314.0" />
+                                    <HBox prefHeight="26.0" prefWidth="126.0">
+                                       <children>
+                                          <Label prefHeight="18.0" prefWidth="128.0" text="Nota:" textFill="#1aa7ec" />
+                                          <TextField fx:id="notaField" prefHeight="26.0" prefWidth="125.0" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="3.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="90.0" text="Desenvolvedora:" textFill="#1aa7ec" />
+                                    <TextField fx:id="desenvolvedoraField" prefHeight="26.0" prefWidth="221.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="45.0" text="Gênero:" textFill="#1aa7ec" />
+                                    <TextField fx:id="generoField" prefHeight="26.0" prefWidth="268.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox minHeight="150.0" minWidth="300.0" prefHeight="150.0" prefWidth="300.0">
+                     <children>
+                        <Label text="Sinopse:" textFill="#1aa7ec" />
+                        <TextArea fx:id="sinopseArea" prefHeight="130.0" prefWidth="410.0" />
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox minHeight="150.0" minWidth="64.0" prefHeight="150.0" prefWidth="444.0">
+                     <children>
+                        <Label text="Reviews:" textFill="#1aa7ec" />
+                        <ListView prefHeight="150.0" prefWidth="410.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="416.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#goToJogos" style="-fx-background-color: #1aa7ec;" text="Voltar" />
+                        <Region prefHeight="26.0" prefWidth="254.0" />
+                        <Button mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Adicionar Review" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="45.0" right="60.0" top="3.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="25.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </VBox>
+         </children>
+         <StackPane.margin>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="40.0" />
+         </StackPane.margin>
+      </VBox>
+   </children>
+</StackPane>

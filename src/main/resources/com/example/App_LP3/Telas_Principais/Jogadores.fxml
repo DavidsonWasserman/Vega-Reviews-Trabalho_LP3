@@ -30,6 +30,9 @@
                             <font>
                                 <Font size="15.0" />
                             </font>
+                        <VBox.margin>
+                           <Insets top="30.0" />
+                        </VBox.margin>
                         </Label>
                         <TextField fx:id="campoBusca" prefHeight="26.0" prefWidth="248.0" promptText="Pesquisar..." />
                      <HBox prefHeight="100.0" prefWidth="200.0">
