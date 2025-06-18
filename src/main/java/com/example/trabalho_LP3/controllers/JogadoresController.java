@@ -46,7 +46,7 @@ public class JogadoresController implements Initializable {
         });
 
         campoExibe.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
+            if (event.getClickCount() == 1) {
                 String jogadorSelecionado = campoExibe.getSelectionModel().getSelectedItem();
                 if (jogadorSelecionado != null) {
                     abrirDetalhesJogador(jogadorSelecionado);

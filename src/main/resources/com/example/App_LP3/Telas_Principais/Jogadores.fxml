@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
@@ -45,12 +46,15 @@
                            <Region HBox.hgrow="ALWAYS" />
                            <MenuButton fx:id="menuClassificar" alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Classificar por:">
                               <items>
-                                 <MenuItem fx:id="menuAZ" onAction="#ordenarAZ" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="A-Z" />
-                                 <MenuItem fx:id="menuZA" onAction="#ordenarZA" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Z-A" />
+                                 <MenuItem fx:id="menuAZ" mnemonicParsing="false" onAction="#ordenarAZ" style="-fx-text-fill: #1aa7ec;" text="A-Z" />
+                                 <MenuItem fx:id="menuZA" mnemonicParsing="false" onAction="#ordenarZA" style="-fx-text-fill: #1aa7ec;" text="Z-A" />
                               </items>
                               <HBox.margin>
                                  <Insets right="10.0" top="5.0" />
                               </HBox.margin>
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
                            </MenuButton>
                         </children>
                         <VBox.margin>
@@ -62,8 +66,14 @@
                            <Insets left="10.0" right="10.0" />
                         </VBox.margin>
                         <content>
-                              <ListView fx:id="campoExibe" prefHeight="260.0" prefWidth="340.0" />
+                              <ListView fx:id="campoExibe" prefHeight="260.0" prefWidth="340.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor></ListView>
                         </content>
+                        <cursor>
+                           <Cursor fx:constant="DEFAULT" />
+                        </cursor>
                      </ScrollPane>
                   </children>
                   <padding>

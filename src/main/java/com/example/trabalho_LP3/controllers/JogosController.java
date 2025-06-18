@@ -60,7 +60,7 @@ public class JogosController implements Initializable {
             });
 
         campoExibe.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
+            if (event.getClickCount() == 1) {
                 String jogoSelecionado = campoExibe.getSelectionModel().getSelectedItem();
                 if (jogoSelecionado != null) {
                     abrirDetalhesJogo(jogoSelecionado);
