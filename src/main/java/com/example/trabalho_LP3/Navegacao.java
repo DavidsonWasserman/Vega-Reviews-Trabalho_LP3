@@ -1,0 +1,71 @@
+package com.example.trabalho_LP3;
+
+import com.example.trabalho_LP3.controllers.HomeController;
+import com.example.trabalho_LP3.controllers.JogadoresController;
+import com.example.trabalho_LP3.controllers.JogoController;
+import com.example.trabalho_LP3.controllers.JogosController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.layout.StackPane;
+
+import java.io.IOException;
+import java.util.Stack;
+
+public class Navegacao {
+    private static StackPane mainContent;
+    private static final Stack<String> history = new Stack<>();
+
+    public static void setMainContent(StackPane content) {
+        mainContent = content;
+    }
+
+    public static void navigateTo(String fxmlPath) {
+        if (mainContent == null) {
+            System.out.println("mainContent ainda não foi definido!");
+            return;
+        }
+
+        if (mainContent.getChildren().size() > 0) {
+            Node currentNode = mainContent.getChildren().get(0);
+            if (!history.isEmpty() && history.peek().equals(fxmlPath)) return;
+            history.push(getCurrentFxml(currentNode));
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(Navegacao.class.getResource(fxmlPath));
+            Parent screen = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof JogosController) {
+                ((JogosController) controller).setMainContent(mainContent);
+            } else if (controller instanceof JogadoresController) {
+                ((JogadoresController) controller).setMainContent(mainContent);
+            } else if (controller instanceof JogoController) {
+                ((JogoController) controller).setMainContent(mainContent);
+            }else if (controller instanceof HomeController) {
+                ((HomeController) controller).setMainContent(mainContent);
+            }
+
+            mainContent.getChildren().setAll(screen);
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar a tela: " + fxmlPath);
+            e.printStackTrace();
+        }
+    }
+
+    public static void goBack() {
+        if (!history.isEmpty()) {
+            String previousFxml = history.pop();
+            navigateTo(previousFxml);
+        }
+    }
+
+    public static void clearHistory() {
+        history.clear();
+    }
+
+    private static String getCurrentFxml(Node node) {
+        return "";
+    }
+}

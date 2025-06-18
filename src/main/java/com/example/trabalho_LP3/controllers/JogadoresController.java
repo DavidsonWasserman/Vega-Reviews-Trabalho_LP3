@@ -55,7 +55,13 @@ public class JogadoresController implements Initializable {
         });
     }
 
-    private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
+    private void connectToDatabase() {
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco_projeto_lp3", "adminlp3", "adminlp3");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void setMainContent(StackPane mainContent){
         this.mainContent = mainContent;
@@ -66,6 +72,8 @@ public class JogadoresController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Jogador.fxml"));
             Parent root = loader.load();
             JogadorController controller = loader.getController();
+            controller.setMainContent(mainContent);
+            controller.setPaginaAnterior((Parent) mainContent.getChildren().get(0));
             controller.carregarDetalhes(nickName);
 
             if (mainContent != null) {
@@ -78,13 +86,7 @@ public class JogadoresController implements Initializable {
         }
     }
 
-    private void connectToDatabase() {
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco_projeto_lp3", "adminlp3", "adminlp3");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
 
     private void carregarJogador(String filtro) {
         campoExibe.getItems().clear();

@@ -1,8 +1,10 @@
 package com.example.trabalho_LP3.controllers;
 
+import com.example.trabalho_LP3.Navegacao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
@@ -19,12 +21,20 @@ public class JogoController {
     @FXML private TextField desenvolvedoraField;
     @FXML private TextField generoField;
     @FXML private TextField notaField;
+    @FXML private TextField qtdReview;
     @FXML private TextArea sinopseArea;
     @FXML private ImageView imageView;
     @FXML private StackPane pagContent;
 
-    @FXML private void goToJogos(ActionEvent event)throws IOException {
-        loadScreen("/com/example/App_LP3/Telas_Principais/Jogos.fxml");
+    private StackPane mainContent;
+    private Parent paginaAnterior;
+
+    @FXML private void voltar(ActionEvent event)throws IOException {
+        if (mainContent != null) {
+            mainContent.getChildren().setAll(paginaAnterior);
+        } else {
+            System.out.println("mainContent está null!");
+        }
     }
 
     private Connection connection;
@@ -36,6 +46,14 @@ public class JogoController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setMainContent(StackPane mainContent){
+        this.mainContent = mainContent;
+    }
+
+    public void setPaginaAnterior(Parent paginaAnterior){
+        this.paginaAnterior = paginaAnterior;
     }
 
     private void loadScreen(String fxmlPath) {
@@ -72,6 +90,7 @@ public class JogoController {
                 generoField.setDisable(true);
                 notaField.setDisable(true);
                 sinopseArea.setDisable(true);
+                qtdReview.setDisable(true);
                 if (caminhoImagem != null && !caminhoImagem.isEmpty()) {
                     String caminhoCompleto = "/com/example/App_LP3/imagens/covers/" + caminhoImagem;
 

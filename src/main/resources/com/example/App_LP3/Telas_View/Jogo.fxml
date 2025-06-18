@@ -60,6 +60,9 @@
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="30.0" text="Nota:" textFill="#1aa7ec" />
                                     <TextField fx:id="notaField" prefHeight="26.0" prefWidth="37.0" />
+                                    <Region prefHeight="26.0" prefWidth="95.0" />
+                                    <Label prefHeight="18.0" prefWidth="130.0" text="Quantidade de Reviews:" textFill="#1aa7ec" />
+                                    <TextField fx:id="qtdReview" prefHeight="26.0" prefWidth="50.0" />
                                  </children>
                                  <padding>
                                     <Insets left="5.0" />
@@ -99,7 +102,7 @@
                   </HBox>
                   <HBox prefHeight="26.0" prefWidth="416.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#goToJogos" style="-fx-background-color: #1aa7ec;" text="Voltar" />
+                        <Button mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #1aa7ec;" text="Voltar" />
                         <Region prefHeight="26.0" prefWidth="254.0" />
                         <Button mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Adicionar Review" />
                      </children>

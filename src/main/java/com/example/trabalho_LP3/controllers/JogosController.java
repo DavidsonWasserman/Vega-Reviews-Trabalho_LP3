@@ -81,6 +81,8 @@ public class JogosController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Jogo.fxml"));
             Parent root = loader.load();
             JogoController controller = loader.getController();
+            controller.setMainContent(mainContent);
+            controller.setPaginaAnterior((Parent) mainContent.getChildren().get(0));
             controller.carregarDetalhes(nomeJogo);
 
             if (mainContent != null) {

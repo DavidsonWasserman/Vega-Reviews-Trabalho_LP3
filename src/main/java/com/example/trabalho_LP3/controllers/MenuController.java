@@ -1,5 +1,6 @@
 package com.example.trabalho_LP3.controllers;
 
+import com.example.trabalho_LP3.Navegacao;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +18,8 @@ public class MenuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadScreen("/com/example/App_LP3/Telas_Principais/Home.fxml");
+        Navegacao.setMainContent(mainContent);
+        Navegacao.navigateTo("/com/example/App_LP3/Telas_Principais/Home.fxml");
     }
     @FXML
     private void goToHome(ActionEvent event) {
@@ -50,7 +52,7 @@ public class MenuController implements Initializable {
             } else if (controller instanceof JogadoresController) {
                 ((JogadoresController) controller).setMainContent(mainContent);
             }
-            mainContent.getChildren().setAll(screen);
+            Navegacao.navigateTo(fxmlPath);
         } catch (IOException e) {
             System.out.println("Erro ao carregar a tela: " + fxmlPath);
             e.printStackTrace();

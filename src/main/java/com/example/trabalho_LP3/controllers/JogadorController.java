@@ -1,10 +1,18 @@
 package com.example.trabalho_LP3.controllers;
 
+import com.example.trabalho_LP3.Navegacao;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+
+import java.io.IOException;
 import java.sql.*;
 
 public class JogadorController {
@@ -12,6 +20,17 @@ public class JogadorController {
     @FXML private TextField nicknameField;
     @FXML private TextArea sobremimArea;
     @FXML private ImageView imageView;
+    @FXML private StackPane pagContent;
+    private StackPane mainContent;
+    private Parent paginaAnterior;
+
+    @FXML private void voltar(ActionEvent event)throws IOException {
+        if (mainContent != null) {
+            mainContent.getChildren().setAll(paginaAnterior);
+        } else {
+            System.out.println("mainContent está null!");
+        }
+    }
 
     private Connection connection;
 
@@ -20,6 +39,30 @@ public class JogadorController {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco_projeto_lp3", "adminlp3", "adminlp3");
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setMainContent(StackPane mainContent){
+        this.mainContent = mainContent;
+    }
+
+    public void setPaginaAnterior(Parent paginaAnterior){
+        this.paginaAnterior = paginaAnterior;
+    }
+
+    private void loadScreen(String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent screen = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof JogosController){
+                ((JogosController) controller).setMainContent(pagContent);
+            }
+            pagContent.getChildren().setAll(screen);
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar a tela: " + fxmlPath);
             e.printStackTrace();
         }
     }
