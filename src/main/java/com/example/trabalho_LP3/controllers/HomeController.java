@@ -93,7 +93,7 @@ public class HomeController implements Initializable {
 
     private void carregarTopJogos() {
         String query = """
-                SELECT j.nome, j.imagem, COUNT(r.id) AS nota_media
+                SELECT j.nome, j.imagem, AVG(r.nota) AS nota_media
                 FROM jogos j
                 JOIN reviews r ON j.id = r.id_jogo
                 GROUP BY j.nome, j.imagem
