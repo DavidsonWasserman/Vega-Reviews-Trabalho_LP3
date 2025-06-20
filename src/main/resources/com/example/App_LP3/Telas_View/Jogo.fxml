@@ -90,11 +90,14 @@
                         <Label text="Reviews:" textFill="#1aa7ec" />
                         <ScrollPane style="-fx-background-color: #1aa7ec; -fx-padding: 0;">
                            <content>
-                              <ListView prefHeight="150.0" prefWidth="410.0" />
+                              <ListView fx:id="reviewsList" prefHeight="150.0" prefWidth="410.0" />
                            </content>
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ScrollPane>
                      </children>
                      <VBox.margin>
