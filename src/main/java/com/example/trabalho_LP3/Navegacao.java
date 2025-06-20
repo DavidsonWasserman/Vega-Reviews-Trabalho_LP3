@@ -61,10 +61,6 @@ public class Navegacao {
         }
     }
 
-    public static void clearHistory() {
-        history.clear();
-    }
-
     private static String getCurrentFxml(Node node) {
         return "";
     }

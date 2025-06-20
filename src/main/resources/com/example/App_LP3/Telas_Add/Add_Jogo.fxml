@@ -1,29 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-
-
-
-    <AnchorPane fx:id="mainContent" prefHeight="600.0" prefWidth="613.0" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
-        <children>
-         <Label layoutX="25.0" layoutY="14.0" prefHeight="26.0" prefWidth="54.0" text="Nome:" textFill="#1aa7ec" />
-         <Label layoutX="25.0" layoutY="133.0" prefHeight="26.0" prefWidth="54.0" text="Sinopse:" textFill="#1aa7ec" />
-         <Label layoutX="25.0" layoutY="51.0" prefHeight="26.0" prefWidth="102.0" text="Desenvolvedora:" textFill="#1aa7ec" />
-         <Label layoutX="25.0" layoutY="93.0" prefHeight="26.0" prefWidth="54.0" text="Gênero:" textFill="#1aa7ec" />
-         <TextField layoutX="68.0" layoutY="15.0" prefHeight="26.0" prefWidth="340.0" />
-         <TextField layoutX="118.0" layoutY="52.0" prefHeight="26.0" prefWidth="289.0" />
-         <TextField layoutX="80.0" layoutY="94.0" prefHeight="26.0" prefWidth="327.0" />
-         <TextArea layoutX="80.0" layoutY="133.0" prefHeight="118.0" prefWidth="327.0" />
-         <Label layoutX="25.0" layoutY="261.0" prefHeight="26.0" prefWidth="82.0" text="Capa do Jogo:" textFill="#1aa7ec" />
-         <Button layoutX="107.0" layoutY="310.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #1aa7ec;" text="Adicionar Jogo" />
-         <Button layoutX="107.0" layoutY="261.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #1aa7ec;" text="Adicionar Imagem" />
-        </children>
-    </AnchorPane>
-</VBox>
+<StackPane fx:id="pagContent" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.AddJogoController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="600.0" maxWidth="800.0" prefHeight="239.0" prefWidth="516.0" spacing="30.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 20;">
+         <children>
+            <VBox alignment="CENTER" maxHeight="486.0" maxWidth="600.0" prefHeight="406.0" prefWidth="516.0">
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="25.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="30.0" />
+               </VBox.margin>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="498.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="54.0" text="Nome:" textFill="#1aa7ec" />
+                        <TextField fx:id="nomeField" prefHeight="26.0" prefWidth="340.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="498.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="102.0" text="Desenvolvedora:" textFill="#1aa7ec" />
+                        <TextField fx:id="desenvolvedoraField" prefHeight="26.0" prefWidth="292.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="498.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="54.0" text="Gênero:" textFill="#1aa7ec" />
+                        <TextField fx:id="generoField" prefHeight="26.0" prefWidth="339.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="498.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="54.0" text="Sinopse:" textFill="#1aa7ec" />
+                        <TextArea fx:id="sinopseArea" prefHeight="100.0" prefWidth="340.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="161.0" prefWidth="397.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="82.0" text="Capa do Jogo:" textFill="#1aa7ec" />
+                        <Button fx:id="botaoImagem" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #1aa7ec;" text="Adicionar Imagem">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <ImageView fx:id="imagemPreview" fitHeight="150.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="23.0" top="10.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="botaoCancelar" mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Cancelar">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Region prefHeight="27.0" prefWidth="127.0" />
+                        <Button fx:id="botaoAddJogo" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #1aa7ec;" text="Adicionar Jogo">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <StackPane.margin>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="40.0" />
+         </StackPane.margin>
+      </VBox>
+   </children>
+</StackPane>

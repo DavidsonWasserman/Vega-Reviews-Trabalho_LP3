@@ -21,13 +21,14 @@ public class MenuController implements Initializable {
         Navegacao.setMainContent(mainContent);
         Navegacao.navigateTo("/com/example/App_LP3/Telas_Principais/Home.fxml");
     }
+
     @FXML
     private void goToHome(ActionEvent event) {
         loadScreen("/com/example/App_LP3/Telas_Principais/Home.fxml");
     }
 
     @FXML
-    private void goToJogos(ActionEvent event)throws IOException {
+    private void goToJogos(ActionEvent event){
         loadScreen("/com/example/App_LP3/Telas_Principais/Jogos.fxml");
     }
 

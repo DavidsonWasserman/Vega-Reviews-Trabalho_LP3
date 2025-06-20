@@ -10,7 +10,6 @@
 <VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.MenuController">
     <AnchorPane style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
       <children>
-                  <!-- MENU -->
                   <MenuBar prefHeight="26.0" prefWidth="800.0" style="-fx-background-color: #1aa7ec;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                       <menus>
                           <Menu mnemonicParsing="false" text="Home">
@@ -26,9 +25,23 @@
                   <items>
                      <MenuItem mnemonicParsing="false" onAction="#goToJogadores" style="-fx-text-fill: #1aa7ec;" text="Ver Jogadores" />
                   </items></Menu>
+               <Menu mnemonicParsing="false" text="Listas">
+                 <items>
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Listas Jogos" />
+                   <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Listas Jogadores" />
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Criar Listas Jogos" />
+                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Criar Listas Jogadores" />
+                 </items>
+               </Menu>
                <Menu mnemonicParsing="false" text="Meu Perfil">
                   <items>
                      <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Perfil" />
+                     <Menu mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Minhas Listas">
+                       <items>
+                           <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Jogos" />
+                           <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Jogadores" />
+                       </items>
+                     </Menu>
                   </items>
                </Menu>
                       </menus>

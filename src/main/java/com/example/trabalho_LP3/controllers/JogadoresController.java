@@ -1,5 +1,6 @@
 package com.example.trabalho_LP3.controllers;
 
+import com.example.trabalho_LP3.ConexaoBanco;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +18,10 @@ import java.util.ResourceBundle;
 
 public class JogadoresController implements Initializable {
 
+
+    @FXML private TextField campoBusca;
+    @FXML private ListView<String> campoExibe;
+
     @FXML
     private void ordenarAZ() {
         ordemAtual = "AZ";
@@ -29,15 +34,13 @@ public class JogadoresController implements Initializable {
         carregarJogador(campoBusca.getText());
     }
 
-    @FXML private TextField campoBusca;
-    @FXML private ListView<String> campoExibe;
-
     private Connection connection;
     private StackPane mainContent;
+    private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        connectToDatabase();
+        connection = ConexaoBanco.getConnection();
         carregarJogador("");
 
         campoBusca.setOnKeyReleased(event -> {
@@ -55,18 +58,10 @@ public class JogadoresController implements Initializable {
         });
     }
 
-    private void connectToDatabase() {
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco_projeto_lp3", "adminlp3", "adminlp3");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void setMainContent(StackPane mainContent){
         this.mainContent = mainContent;
     }
-    // Abre outra tela com mais info(Jogador.fxml)
+
     private void abrirDetalhesJogador(String nickName) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Jogador.fxml"));
@@ -85,8 +80,6 @@ public class JogadoresController implements Initializable {
             e.printStackTrace();
         }
     }
-
-    private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
 
     private void carregarJogador(String filtro) {
         campoExibe.getItems().clear();

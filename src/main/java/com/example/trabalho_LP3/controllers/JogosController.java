@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javafx.scene.control.MenuItem;
+import com.example.trabalho_LP3.ConexaoBanco;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -15,10 +15,6 @@ import java.util.ResourceBundle;
 
 public class JogosController implements Initializable {
 
-    @FXML private MenuItem itemAZ;
-    @FXML private MenuItem itemZA;
-    @FXML private MenuItem itemMaiorNota;
-    @FXML private MenuItem itemMenorNota;
     @FXML private TextField campoBusca;
     @FXML private ListView<String> campoExibe;
 
@@ -48,10 +44,11 @@ public class JogosController implements Initializable {
 
     private StackPane mainContent;
     private Connection connection;
+    private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        connectToDatabase();
+        connection = ConexaoBanco.getConnection();
         carregarJogos("");
 
         campoBusca.setOnKeyReleased(event -> {
@@ -69,13 +66,10 @@ public class JogosController implements Initializable {
         });
     }
 
-    private String ordemAtual = "AZ"; //ordem alfabetica como classificacao padrao
-
     public void setMainContent(StackPane mainContent){
         this.mainContent = mainContent;
     }
 
-    // Abre outra tela com mais info(jogo.fxml)
     private void abrirDetalhesJogo(String nomeJogo) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Jogo.fxml"));
@@ -91,18 +85,6 @@ public class JogosController implements Initializable {
                 System.out.println("mainContent está null!");
             }
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void connectToDatabase() {
-        try {
-            connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/banco_projeto_lp3",
-                    "adminlp3", "adminlp3");
-            System.out.println("Conectado ao banco!");
-        } catch (SQLException e) {
-            System.out.println("Erro ao conectar ao banco");
             e.printStackTrace();
         }
     }

@@ -1,5 +1,6 @@
 package com.example.trabalho_LP3.controllers;
 
+import com.example.trabalho_LP3.ConexaoBanco;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,58 +20,29 @@ import java.util.ResourceBundle;
 public class HomeController implements Initializable {
 
 
-    @FXML
-    private Label nomeJogoTop1;
-    @FXML
-    private Label nomeJogoTop2;
-    @FXML
-    private Label nomeJogoTop3;
-    @FXML
-    private Label nomeJogoTop4;
-    @FXML
-    private Label nomeJogoTop5;
-    @FXML
-    private ImageView imagemJogoTop1;
-    @FXML
-    private ImageView imagemJogoTop2;
-    @FXML
-    private ImageView imagemJogoTop3;
-    @FXML
-    private ImageView imagemJogoTop4;
-    @FXML
-    private ImageView imagemJogoTop5;
-    @FXML
-    private Label nickJogadorTop1;
-    @FXML
-    private Label nickJogadorTop2;
-    @FXML
-    private Label nickJogadorTop3;
-    @FXML
-    private Label nickJogadorTop4;
-    @FXML
-    private Label nickJogadorTop5;
-    @FXML
-    private ImageView imagemJogadorTop1;
-    @FXML
-    private ImageView imagemJogadorTop2;
-    @FXML
-    private ImageView imagemJogadorTop3;
-    @FXML
-    private ImageView imagemJogadorTop4;
-    @FXML
-    private ImageView imagemJogadorTop5;
+    @FXML private Label nomeJogoTop1;
+    @FXML private Label nomeJogoTop2;
+    @FXML private Label nomeJogoTop3;
+    @FXML private Label nomeJogoTop4;
+    @FXML private Label nomeJogoTop5;
+    @FXML private ImageView imagemJogoTop1;
+    @FXML private ImageView imagemJogoTop2;
+    @FXML private ImageView imagemJogoTop3;
+    @FXML private ImageView imagemJogoTop4;
+    @FXML private ImageView imagemJogoTop5;
+    @FXML private Label nickJogadorTop1;
+    @FXML private Label nickJogadorTop2;
+    @FXML private Label nickJogadorTop3;
+    @FXML private Label nickJogadorTop4;
+    @FXML private Label nickJogadorTop5;
+    @FXML private ImageView imagemJogadorTop1;
+    @FXML private ImageView imagemJogadorTop2;
+    @FXML private ImageView imagemJogadorTop3;
+    @FXML private ImageView imagemJogadorTop4;
+    @FXML private ImageView imagemJogadorTop5;
 
-    private StackPane mainContent;
-    private Connection connection;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        connectToDatabase();
-        carregarTopJogos();
-        carregarTopJogadores();
-    }
-
-    @FXML private void abrirDetalhesJogo(MouseEvent event) {
+    @FXML
+    private void abrirDetalhesJogo(MouseEvent event) {
         for (Node node : ((VBox) event.getSource()).getChildren()) {
             if (node instanceof Label label) {
                 abrirDetalhesJogo(label.getText());
@@ -79,25 +51,24 @@ public class HomeController implements Initializable {
         }
     }
 
-    @FXML private void abrirDetalhesJogador(MouseEvent event) {
+    @FXML
+    private void abrirDetalhesJogador(MouseEvent event) {
         for (Node node : ((VBox) event.getSource()).getChildren()) {
-        if (node instanceof Label label) {
-            abrirDetalhesJogador(label.getText());
-            break;
+            if (node instanceof Label label) {
+                abrirDetalhesJogador(label.getText());
+                break;
+            }
         }
-    }
     }
 
-    private void connectToDatabase() {
-        try {
-            connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/banco_projeto_lp3",
-                    "adminlp3", "adminlp3");
-            System.out.println("Conectado ao banco!");
-        } catch (SQLException e) {
-            System.out.println("Erro ao conectar ao banco");
-            e.printStackTrace();
-        }
+    private StackPane mainContent;
+    private Connection connection;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        connection = ConexaoBanco.getConnection();
+        carregarTopJogos();
+        carregarTopJogadores();
     }
 
     public void setMainContent(StackPane mainContent) {
