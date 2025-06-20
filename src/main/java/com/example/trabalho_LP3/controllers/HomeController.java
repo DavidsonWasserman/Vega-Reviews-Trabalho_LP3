@@ -45,21 +45,25 @@ public class HomeController implements Initializable {
     private void abrirDetalhesJogo(MouseEvent event) {
         for (Node node : ((VBox) event.getSource()).getChildren()) {
             if (node instanceof Label label) {
-                abrirDetalhesJogo(label.getText());
+                String nome = (String) label.getUserData(); // ← nome real
+                abrirDetalhesJogo(nome);
                 break;
             }
         }
     }
 
+
     @FXML
     private void abrirDetalhesJogador(MouseEvent event) {
         for (Node node : ((VBox) event.getSource()).getChildren()) {
             if (node instanceof Label label) {
-                abrirDetalhesJogador(label.getText());
+                String nickLimpo = (String) label.getUserData(); // ← nick real
+                abrirDetalhesJogador(nickLimpo);
                 break;
             }
         }
     }
+
 
     private StackPane mainContent;
     private Connection connection;

@@ -33,7 +33,7 @@
                               <HBox prefHeight="26.0" prefWidth="801.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="38.0" text="Nome:" textFill="#1aa7ec" />
-                                    <TextField fx:id="nomeField" prefHeight="26.0" prefWidth="307.0" />
+                                    <TextField fx:id="nomeField" prefHeight="26.0" prefWidth="316.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets left="5.0" />
@@ -42,7 +42,7 @@
                               <HBox prefWidth="200.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="90.0" text="Desenvolvedora:" textFill="#1aa7ec" />
-                                    <TextField fx:id="desenvolvedoraField" prefHeight="26.0" prefWidth="254.0" />
+                                    <TextField fx:id="desenvolvedoraField" prefHeight="26.0" prefWidth="264.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" top="5.0" />
@@ -51,7 +51,7 @@
                               <HBox prefHeight="33.0" prefWidth="370.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="45.0" text="Gênero:" textFill="#1aa7ec" />
-                                    <TextField fx:id="generoField" prefHeight="26.0" prefWidth="298.0" />
+                                    <TextField fx:id="generoField" prefHeight="26.0" prefWidth="308.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets left="5.0" />
@@ -61,7 +61,7 @@
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="30.0" text="Nota:" textFill="#1aa7ec" />
                                     <TextField fx:id="notaField" prefHeight="26.0" prefWidth="37.0" />
-                                    <Region prefHeight="26.0" prefWidth="95.0" />
+                                    <Region prefHeight="26.0" prefWidth="105.0" />
                                     <Label prefHeight="18.0" prefWidth="130.0" text="Quantidade de Reviews:" textFill="#1aa7ec" />
                                     <TextField fx:id="qtdReview" prefHeight="26.0" prefWidth="50.0" />
                                  </children>
@@ -79,7 +79,13 @@
                   <HBox minHeight="150.0" minWidth="300.0" prefHeight="150.0" prefWidth="300.0">
                      <children>
                         <Label text="Sinopse:" textFill="#1aa7ec" />
-                        <TextArea fx:id="sinopseArea" prefHeight="130.0" prefWidth="410.0" />
+                        <TextArea fx:id="sinopseArea" prefHeight="130.0" prefWidth="410.0">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor></TextArea>
                      </children>
                      <padding>
                         <Insets top="20.0" />
@@ -90,14 +96,14 @@
                         <Label text="Reviews:" textFill="#1aa7ec" />
                         <ScrollPane style="-fx-background-color: #1aa7ec; -fx-padding: 0;">
                            <content>
-                              <ListView fx:id="reviewsList" prefHeight="150.0" prefWidth="410.0" />
+                              <ListView fx:id="reviewsList" prefHeight="150.0" prefWidth="410.0" style="-fx-background-color: #7c7c7c;">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor></ListView>
                            </content>
                            <HBox.margin>
-                              <Insets />
+                              <Insets left="5.0" />
                            </HBox.margin>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
                         </ScrollPane>
                      </children>
                      <VBox.margin>
@@ -106,11 +112,12 @@
                   </HBox>
                   <HBox prefHeight="26.0" prefWidth="416.0">
                      <children>
+                        <Region prefHeight="26.0" prefWidth="4.0" />
                         <Button mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #1aa7ec;" text="Voltar">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Region prefHeight="26.0" prefWidth="254.0" />
+                        <Region prefHeight="26.0" prefWidth="255.0" />
                         <Button mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Adicionar Review">
                            <cursor>
                               <Cursor fx:constant="HAND" />

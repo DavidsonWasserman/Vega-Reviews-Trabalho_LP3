@@ -12,6 +12,7 @@ module com.example.trabalho_LP3 {
     requires com.almasb.fxgl.all;
     requires java.desktop;
     requires java.sql;
+    requires annotations;
 
     opens com.example.trabalho_LP3 to javafx.fxml;
     exports com.example.trabalho_LP3;

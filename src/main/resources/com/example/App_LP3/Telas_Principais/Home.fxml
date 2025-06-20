@@ -29,35 +29,40 @@
             <HBox alignment="CENTER" prefHeight="142.0" prefWidth="467.0" spacing="70.0">
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogo" spacing="5">
                     <ImageView fx:id="imagemJogoTop1" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nomeJogoTop1" text="Jogo1" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop214" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 1:" textFill="#1aa7ec" />
+                    <Label fx:id="nomeJogoTop1" alignment="CENTER" prefHeight="18.0" prefWidth="139.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </VBox>
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogo" spacing="5">
                     <ImageView fx:id="imagemJogoTop2" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nomeJogoTop2" text="Jogo2" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop21" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 2:" textFill="#1aa7ec" />
+                    <Label fx:id="nomeJogoTop2" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </VBox>
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogo" spacing="5">
                     <ImageView fx:id="imagemJogoTop3" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nomeJogoTop3" text="Jogo3" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop213" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 3:" textFill="#1aa7ec" />
+                    <Label fx:id="nomeJogoTop3" alignment="CENTER" prefHeight="18.0" prefWidth="145.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </VBox>
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogo" spacing="5">
                     <ImageView fx:id="imagemJogoTop4" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nomeJogoTop4" text="Jogo4" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop212" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 4:" textFill="#1aa7ec" />
+                    <Label fx:id="nomeJogoTop4" alignment="CENTER" prefHeight="18.0" prefWidth="140.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </VBox>
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogo" spacing="5">
                     <ImageView fx:id="imagemJogoTop5" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nomeJogoTop5" text="Jogo5" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop211" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 5:" textFill="#1aa7ec" />
+                    <Label fx:id="nomeJogoTop5" alignment="CENTER" prefWidth="126.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -72,38 +77,43 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Jogadores" textFill="#1aa7ec" />
-            <HBox alignment="CENTER" spacing="70.0">
+            <HBox alignment="CENTER" prefHeight="142.0" prefWidth="467.0" spacing="70.0">
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogador" spacing="5">
                     <ImageView fx:id="imagemJogadorTop1" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nickJogadorTop1" text="Player 1" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop2141" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 1:" textFill="#1aa7ec" />
+                    <Label fx:id="nickJogadorTop1" alignment="CENTER" prefHeight="18.0" prefWidth="226.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </VBox>
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogador" spacing="5">
                     <ImageView fx:id="imagemJogadorTop2" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nickJogadorTop2" text="Player 2" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop2142" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 2:" textFill="#1aa7ec" />
+                    <Label fx:id="nickJogadorTop2" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </VBox>
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogador" spacing="5">
                     <ImageView fx:id="imagemJogadorTop3" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nickJogadorTop3" text="Player 3" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop2143" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 3:" textFill="#1aa7ec" />
+                    <Label fx:id="nickJogadorTop3" alignment="CENTER" prefHeight="18.0" prefWidth="144.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </VBox>
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogador" spacing="5">
                     <ImageView fx:id="imagemJogadorTop4" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nickJogadorTop4" text="Player 4" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop2144" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 4:" textFill="#1aa7ec" />
+                    <Label fx:id="nickJogadorTop4" alignment="CENTER" prefHeight="18.0" prefWidth="172.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </VBox>
                 <VBox alignment="CENTER" onMouseClicked="#abrirDetalhesJogador" spacing="5">
                     <ImageView fx:id="imagemJogadorTop5" fitHeight="120" fitWidth="80" preserveRatio="true" />
-                    <Label fx:id="nickJogadorTop5" text="Player 5" textFill="#1aa7ec" />
+               <Label fx:id="nomeJogoTop2145" alignment="CENTER" prefHeight="18.0" prefWidth="127.0" text="TOP 5:" textFill="#1aa7ec" />
+                    <Label fx:id="nickJogadorTop5" alignment="CENTER" prefHeight="18.0" prefWidth="227.0" textFill="#1aa7ec" />
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

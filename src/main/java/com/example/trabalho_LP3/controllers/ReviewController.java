@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.StackPane;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.sql.*;
 
@@ -44,7 +46,7 @@ public class ReviewController {
         this.paginaAnterior = paginaAnterior;
     }
 
-    public void carregarDetalhes(Review review) {
+    public void carregarDetalhes(@NotNull Review review) {
         jogoField.setText(review.getNomeJogo());
         jogadorField.setText(review.getJogador());
         notaField.setText(String.valueOf(review.getNota()));

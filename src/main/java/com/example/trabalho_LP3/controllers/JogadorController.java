@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
@@ -43,6 +40,7 @@ public class JogadorController {
             super.updateItem(review, empty);
             if (empty || review == null) {
                 setText(null);
+                setStyle("");
             } else {
                 int limite = 20;
                 String resumo = review.getComentario().length() > limite
@@ -50,9 +48,12 @@ public class JogadorController {
                         : review.getComentario();
                 setText(String.format("Review de %s\nNota: %d\nComentário: \"%s\"",
                         review.getNomeJogo(), review.getNota(), resumo));
+                setStyle("-fx-control-inner-background: #7c7c7c; -fx-background-color: transparent; -fx-border-color: #1aa7ec; -fx-border-width: 0 0 1 0;");
             }
         }
-    });
+        });
+
+        reviewsList.setStyle("-fx-background-color: #7c7c7c; -fx-control-inner-background: #7c7c7c;");
 
         reviewsList.setOnMouseClicked(event -> {
             if (event.getClickCount() == 1 && !reviewsList.getSelectionModel().isEmpty()) {
@@ -136,6 +137,19 @@ public class JogadorController {
                 reviewsList.getItems().add(review);
             }
 
+            if (reviewsList.getItems().isEmpty()){
+                reviewsList.setPlaceholder(new Label("Este jogador ainda não fez uma review"));
+            } else {
+                reviewsList.setCursor(javafx.scene.Cursor.HAND);
+                reviewsList.setOnMouseClicked(event -> {
+                    if (event.getClickCount() == 1 && !reviewsList.getSelectionModel().isEmpty()) {
+                        Review selecionada = reviewsList.getSelectionModel().getSelectedItem();
+                        if (selecionada != null) {
+                            abrirDetalhesReview(selecionada);
+                        }
+                    }
+                });
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
