@@ -40,28 +40,30 @@ public class HomeController implements Initializable {
     @FXML private ImageView imagemJogadorTop3;
     @FXML private ImageView imagemJogadorTop4;
     @FXML private ImageView imagemJogadorTop5;
+    @FXML private VBox vboxJogo1;
+    @FXML private VBox vboxJogo2;
+    @FXML private VBox vboxJogo3;
+    @FXML private VBox vboxJogo4;
+    @FXML private VBox vboxJogo5;
+    @FXML private VBox vboxJogador1;
+    @FXML private VBox vboxJogador2;
+    @FXML private VBox vboxJogador3;
+    @FXML private VBox vboxJogador4;
+    @FXML private VBox vboxJogador5;
 
     @FXML
     private void abrirDetalhesJogo(MouseEvent event) {
-        for (Node node : ((VBox) event.getSource()).getChildren()) {
-            if (node instanceof Label label) {
-                String nome = (String) label.getUserData(); // ← nome real
-                abrirDetalhesJogo(nome);
-                break;
-            }
-        }
+        VBox vbox = (VBox) event.getSource();
+        Label label = (Label) vbox.getUserData();
+        abrirDetalhesJogo(label.getText());
     }
 
 
     @FXML
     private void abrirDetalhesJogador(MouseEvent event) {
-        for (Node node : ((VBox) event.getSource()).getChildren()) {
-            if (node instanceof Label label) {
-                String nickLimpo = (String) label.getUserData(); // ← nick real
-                abrirDetalhesJogador(nickLimpo);
-                break;
-            }
-        }
+        VBox vbox = (VBox) event.getSource();
+        Label label = (Label) vbox.getUserData();
+        abrirDetalhesJogador(label.getText());
     }
 
 
@@ -73,6 +75,16 @@ public class HomeController implements Initializable {
         connection = ConexaoBanco.getConnection();
         carregarTopJogos();
         carregarTopJogadores();
+        vboxJogo1.setUserData(nomeJogoTop1);
+        vboxJogo2.setUserData(nomeJogoTop2);
+        vboxJogo3.setUserData(nomeJogoTop3);
+        vboxJogo4.setUserData(nomeJogoTop4);
+        vboxJogo5.setUserData(nomeJogoTop5);
+        vboxJogador1.setUserData(nickJogadorTop1);
+        vboxJogador2.setUserData(nickJogadorTop2);
+        vboxJogador3.setUserData(nickJogadorTop3);
+        vboxJogador4.setUserData(nickJogadorTop4);
+        vboxJogador5.setUserData(nickJogadorTop5);
     }
 
     public void setMainContent(StackPane mainContent) {
