@@ -28,9 +28,7 @@
                <Menu mnemonicParsing="false" text="Listas">
                  <items>
                      <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Listas Jogos" />
-                   <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Listas Jogadores" />
                      <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Criar Listas Jogos" />
-                     <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Criar Listas Jogadores" />
                  </items>
                </Menu>
                <Menu mnemonicParsing="false" text="Meu Perfil">
@@ -39,7 +37,6 @@
                      <Menu mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Minhas Listas">
                        <items>
                            <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Jogos" />
-                           <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Jogadores" />
                        </items>
                      </Menu>
                   </items>

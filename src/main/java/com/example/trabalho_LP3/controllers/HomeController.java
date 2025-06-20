@@ -92,7 +92,14 @@ public class HomeController implements Initializable {
     }
 
     private void carregarTopJogos() {
-        String query = "SELECT nome, imagem FROM jogos ORDER BY nota_media DESC LIMIT 5";
+        String query = """
+                SELECT j.nome, j.imagem, COUNT(r.id) AS nota_media
+                FROM jogos j
+                JOIN reviews r ON j.id = r.id_jogo
+                GROUP BY j.nome, j.imagem
+                ORDER BY nota_media DESC
+                LIMIT 5;
+                """;
         try (PreparedStatement stmt = connection.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             int i = 1;
@@ -140,7 +147,14 @@ public class HomeController implements Initializable {
     }
 
     private void carregarTopJogadores() {
-        String query = "SELECT nickname, foto_perfil FROM usuarios ORDER BY quantidade_de_reviews DESC LIMIT 5";
+        String query = """
+                SELECT u.nickname, u.foto_perfil, COUNT(r.id) AS quantidade_reviews
+                FROM usuarios u
+                JOIN reviews r ON u.id = r.id_usuario
+                GROUP BY u.nickname, u.foto_perfil
+                ORDER BY quantidade_reviews DESC
+                LIMIT 5;
+                """;
         try (PreparedStatement stmt = connection.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             int i = 1;

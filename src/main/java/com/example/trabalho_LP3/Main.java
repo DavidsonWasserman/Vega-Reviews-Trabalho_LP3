@@ -14,7 +14,7 @@ public class Main extends Application {
         primaryStage.setTitle("Vega Reviews");
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(800);
-        primaryStage.setMinHeight(600);
+        primaryStage.setMinHeight(700);
         primaryStage.setOnCloseRequest(event -> {
             System.out.println("Encerrando a aplicação...");
             System.exit(0);

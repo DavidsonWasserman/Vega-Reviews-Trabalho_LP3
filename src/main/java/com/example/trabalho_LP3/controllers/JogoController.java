@@ -2,6 +2,7 @@ package com.example.trabalho_LP3.controllers;
 
 import com.example.trabalho_LP3.ConexaoBanco;
 import com.example.trabalho_LP3.Review;
+import com.google.protobuf.StringValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -80,7 +81,13 @@ public class JogoController {
     }
 
     public void carregarDetalhes(String nomeJogo) {
-        String query = "SELECT * FROM jogos WHERE nome = ?";
+        String query = """
+                SELECT j.nome, j.desenvolvedora, j.genero, AVG(r.nota) AS nota_media, COUNT(r.id) AS qtd, j.sinopse, j.imagem
+                FROM jogos j
+                JOIN reviews r ON j.id = r.id_jogo
+                WHERE j.nome = ?
+                GROUP BY j.nome, j.desenvolvedora, j.genero, j.sinopse, j.imagem;
+                """;
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, nomeJogo);
             ResultSet rs = stmt.executeQuery();
@@ -88,8 +95,9 @@ public class JogoController {
                 nomeField.setText(rs.getString("nome"));
                 desenvolvedoraField.setText(rs.getString("desenvolvedora"));
                 generoField.setText(rs.getString("genero"));
-                notaField.setText(rs.getString("nota_media"));
+                notaField.setText(String.valueOf(rs.getDouble("nota_media")));
                 sinopseArea.setText(rs.getString("sinopse"));
+                qtdReview.setText(String.valueOf(rs.getInt("qtd")));
                 String caminhoImagem = rs.getString("imagem");
 
                 nomeField.setDisable(true);

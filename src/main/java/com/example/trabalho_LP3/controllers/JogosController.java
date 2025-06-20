@@ -92,16 +92,22 @@ public class JogosController implements Initializable {
     private void carregarJogos(String filtro) {
         campoExibe.getItems().clear();
 
-        StringBuilder query = new StringBuilder("SELECT nome FROM jogos");
+            StringBuilder query = new StringBuilder("""
+                                                    SELECT j.nome, AVG(r.nota) AS nota_media
+                                                    FROM jogos j
+                                                    LEFT JOIN reviews r ON j.id = r.id_jogo
+                                                    """);
         boolean temFiltro = filtro != null && !filtro.trim().isEmpty();
 
         if (temFiltro) {
             query.append(" WHERE LOWER(nome) LIKE ?");
         }
 
+        query.append("GROUP BY j.nome");
+
         switch (ordemAtual) {
-            case "AZ" -> query.append(" ORDER BY nome ASC");
-            case "ZA" -> query.append(" ORDER BY nome DESC");
+            case "AZ" -> query.append(" ORDER BY j.nome ASC");
+            case "ZA" -> query.append(" ORDER BY j.nome DESC");
             case "MAIOR" -> query.append(" ORDER BY nota_media DESC");
             case "MENOR" -> query.append(" ORDER BY nota_media ASC");
         }
