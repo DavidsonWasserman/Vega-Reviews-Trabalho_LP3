@@ -1,8 +1,7 @@
-package com.example.trabalho_LP3.controllers;
+package com.example.trabalho_LP3.controllers.exibicaoDetalhes;
 
 import com.example.trabalho_LP3.ConexaoBanco;
 import com.example.trabalho_LP3.Review;
-import com.google.protobuf.StringValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -82,12 +81,13 @@ public class JogoController {
 
     public void carregarDetalhes(String nomeJogo) {
         String query = """
-                SELECT j.nome, j.desenvolvedora, j.genero, AVG(r.nota) AS nota_media, COUNT(r.id) AS qtd, j.sinopse, j.imagem
-                FROM jogos j
-                JOIN reviews r ON j.id = r.id_jogo
-                WHERE j.nome = ?
-                GROUP BY j.nome, j.desenvolvedora, j.genero, j.sinopse, j.imagem;
-                """;
+                       SELECT j.nome, j.desenvolvedora, j.genero, AVG(r.nota) AS nota_media, COUNT(r.id) AS qtd, j.sinopse, j.imagem
+                       FROM jogos j
+                       LEFT JOIN reviews_jogos r ON j.id = r.id_jogo
+                       WHERE j.nome = ?
+                       GROUP BY j.nome, j.desenvolvedora, j.genero, j.sinopse, j.imagem;
+                       """;
+
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, nomeJogo);
             ResultSet rs = stmt.executeQuery();
@@ -132,7 +132,7 @@ public class JogoController {
 
         String reviewQuery = """
                     SELECT u.nickname AS nome_jogador, r.nota, r.comentario
-                    FROM reviews r
+                    FROM reviews_jogos r
                     JOIN jogos j ON r.id_jogo = j.id
                     JOIN usuarios u ON r.id_usuario = u.id
                     WHERE j.nome = ?

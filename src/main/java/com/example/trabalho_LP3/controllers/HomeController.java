@@ -1,10 +1,11 @@
 package com.example.trabalho_LP3.controllers;
 
 import com.example.trabalho_LP3.ConexaoBanco;
+import com.example.trabalho_LP3.controllers.exibicaoDetalhes.UsuarioController;
+import com.example.trabalho_LP3.controllers.exibicaoDetalhes.JogoController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -95,7 +96,7 @@ public class HomeController implements Initializable {
         String query = """
                 SELECT j.nome, j.imagem, AVG(r.nota) AS nota_media
                 FROM jogos j
-                JOIN reviews r ON j.id = r.id_jogo
+                JOIN reviews_jogos r ON j.id = r.id_jogo
                 GROUP BY j.nome, j.imagem
                 ORDER BY nota_media DESC
                 LIMIT 5;
@@ -150,7 +151,7 @@ public class HomeController implements Initializable {
         String query = """
                 SELECT u.nickname, u.foto_perfil, COUNT(r.id) AS quantidade_reviews
                 FROM usuarios u
-                JOIN reviews r ON u.id = r.id_usuario
+                JOIN reviews_jogos r ON u.id = r.id_usuario
                 GROUP BY u.nickname, u.foto_perfil
                 ORDER BY quantidade_reviews DESC
                 LIMIT 5;
@@ -222,9 +223,9 @@ public class HomeController implements Initializable {
 
     private void abrirDetalhesJogador(String nickName) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Jogador.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Usuario.fxml"));
             Parent root = loader.load();
-            JogadorController controller = loader.getController();
+            UsuarioController controller = loader.getController();
             controller.setMainContent(mainContent);
             controller.setPaginaAnterior((Parent) mainContent.getChildren().get(0));
             controller.carregarDetalhes(nickName);

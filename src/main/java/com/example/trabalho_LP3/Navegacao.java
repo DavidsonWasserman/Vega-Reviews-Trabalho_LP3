@@ -1,9 +1,9 @@
 package com.example.trabalho_LP3;
 
 import com.example.trabalho_LP3.controllers.HomeController;
-import com.example.trabalho_LP3.controllers.JogadoresController;
-import com.example.trabalho_LP3.controllers.JogoController;
-import com.example.trabalho_LP3.controllers.JogosController;
+import com.example.trabalho_LP3.controllers.searchBiblioteca.UsuariosController;
+import com.example.trabalho_LP3.controllers.exibicaoDetalhes.JogoController;
+import com.example.trabalho_LP3.controllers.searchBiblioteca.JogosController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -39,8 +39,8 @@ public class Navegacao {
             Object controller = loader.getController();
             if (controller instanceof JogosController) {
                 ((JogosController) controller).setMainContent(mainContent);
-            } else if (controller instanceof JogadoresController) {
-                ((JogadoresController) controller).setMainContent(mainContent);
+            } else if (controller instanceof UsuariosController) {
+                ((UsuariosController) controller).setMainContent(mainContent);
             } else if (controller instanceof JogoController) {
                 ((JogoController) controller).setMainContent(mainContent);
             }else if (controller instanceof HomeController) {

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane fx:id="pagContent" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.AddJogoController">
+<StackPane fx:id="pagContent" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.add.AddJogoController">
    <children>
       <VBox alignment="CENTER" maxHeight="600.0" maxWidth="800.0" prefHeight="239.0" prefWidth="516.0" spacing="30.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 20;">
          <children>

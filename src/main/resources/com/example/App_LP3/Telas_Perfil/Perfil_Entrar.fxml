@@ -1,22 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-
-
-
-    <AnchorPane fx:id="mainContent" prefHeight="600.0" prefWidth="613.0" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
-        <children>
-            <Label layoutX="25.0" layoutY="14.0" prefHeight="26.0" prefWidth="54.0" text="Nome:" textFill="WHITE" />
-            <TextField layoutX="68.0" layoutY="15.0" prefHeight="26.0" prefWidth="283.0" />
-            <Button layoutX="97.0" layoutY="91.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" text="Entrar" />
-            <TextField layoutX="68.0" layoutY="52.0" prefHeight="26.0" prefWidth="283.0" />
-            <Label layoutX="25.0" layoutY="52.0" prefHeight="26.0" prefWidth="54.0" text="Senha:" textFill="WHITE" />
-        </children>
-    </AnchorPane>
-</VBox>
+<StackPane fx:id="pagContent" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.perfil.LoginPerfilController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="100.0" maxWidth="500.0" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 20;" StackPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" maxHeight="486.0" maxWidth="600.0" prefHeight="432.0" prefWidth="516.0">
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="25.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="30.0" />
+               </VBox.margin>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="498.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="61.0" text="Nickname:" textFill="#1aa7ec" />
+                        <TextField fx:id="nicknameField" prefHeight="26.0" prefWidth="340.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="498.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="54.0" text="Senha:" textFill="#1aa7ec" />
+                        <PasswordField fx:id="senhaField" prefHeight="26.0" prefWidth="346.0" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="mensagemErro" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="350.0" text="Usuário ou senha incorreta!" textFill="RED">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="botaoEntrar" contentDisplay="CENTER" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: #1aa7ec;" text="Entrar">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label text="OU" textFill="#1aa7ec">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="botaoCriarConta" mnemonicParsing="false" onAction="#goToCriarConta" prefHeight="26.0" prefWidth="81.0" style="-fx-background-color: #1aa7ec;" text="Criar Conta">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <StackPane.margin>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="40.0" />
+         </StackPane.margin>
+      </VBox>
+   </children>
+</StackPane>

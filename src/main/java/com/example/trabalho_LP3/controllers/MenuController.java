@@ -1,6 +1,8 @@
 package com.example.trabalho_LP3.controllers;
 
 import com.example.trabalho_LP3.Navegacao;
+import com.example.trabalho_LP3.controllers.searchBiblioteca.UsuariosController;
+import com.example.trabalho_LP3.controllers.searchBiblioteca.JogosController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,12 +31,12 @@ public class MenuController implements Initializable {
 
     @FXML
     private void goToJogos(ActionEvent event){
-        loadScreen("/com/example/App_LP3/Telas_Principais/Jogos.fxml");
+        loadScreen("/com/example/App_LP3/TelasSearchBiblioteca/Jogos.fxml");
     }
 
     @FXML
     private void goToJogadores(ActionEvent event) {
-        loadScreen("/com/example/App_LP3/Telas_Principais/Jogadores.fxml");
+        loadScreen("/com/example/App_LP3/TelasSearchBiblioteca/Usuarios.fxml");
     }
 
     @FXML
@@ -50,8 +52,8 @@ public class MenuController implements Initializable {
             Object controller = loader.getController();
             if (controller instanceof JogosController){
                 ((JogosController) controller).setMainContent(mainContent);
-            } else if (controller instanceof JogadoresController) {
-                ((JogadoresController) controller).setMainContent(mainContent);
+            } else if (controller instanceof UsuariosController) {
+                ((UsuariosController) controller).setMainContent(mainContent);
             }
             Navegacao.navigateTo(fxmlPath);
         } catch (IOException e) {

@@ -19,4 +19,11 @@ module com.example.trabalho_LP3 {
     exports com.example.trabalho_LP3;
     exports com.example.trabalho_LP3.controllers;
     opens com.example.trabalho_LP3.controllers to javafx.fxml;
+    exports com.example.trabalho_LP3.controllers.searchBiblioteca;
+    opens com.example.trabalho_LP3.controllers.searchBiblioteca to javafx.fxml;
+    exports com.example.trabalho_LP3.controllers.exibicaoDetalhes;
+    opens com.example.trabalho_LP3.controllers.exibicaoDetalhes to javafx.fxml;
+    exports com.example.trabalho_LP3.controllers.add;
+    opens com.example.trabalho_LP3.controllers.add to javafx.fxml;
+    opens com.example.trabalho_LP3.controllers.perfil to javafx.fxml;
 }

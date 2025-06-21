@@ -1,4 +1,4 @@
-package com.example.trabalho_LP3.controllers;
+package com.example.trabalho_LP3.controllers.add;
 
 import com.example.trabalho_LP3.ConexaoBanco;
 import javafx.fxml.FXML;

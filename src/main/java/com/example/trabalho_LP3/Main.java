@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/App_LP3/Telas_Principais/Menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/App_LP3/Telas_Perfil/Perfil_Entrar.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         primaryStage.setTitle("Vega Reviews");
         primaryStage.setScene(scene);

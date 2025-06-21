@@ -1,5 +1,6 @@
-package com.example.trabalho_LP3.controllers;
+package com.example.trabalho_LP3.controllers.searchBiblioteca;
 
+import com.example.trabalho_LP3.controllers.exibicaoDetalhes.JogoController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -95,7 +96,7 @@ public class JogosController implements Initializable {
             StringBuilder query = new StringBuilder("""
                                                     SELECT j.nome, AVG(r.nota) AS nota_media
                                                     FROM jogos j
-                                                    LEFT JOIN reviews r ON j.id = r.id_jogo
+                                                    LEFT JOIN reviews_jogos r ON j.id = r.id_jogo
                                                     """);
         boolean temFiltro = filtro != null && !filtro.trim().isEmpty();
 

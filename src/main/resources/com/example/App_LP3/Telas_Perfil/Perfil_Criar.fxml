@@ -1,27 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-
-
-
-    <AnchorPane fx:id="mainContent" prefHeight="600.0" prefWidth="613.0" style="-fx-background-color: linear-gradient(to bottom, #444444, #000000);" VBox.vgrow="ALWAYS">
-        <children>
-            <Label layoutX="25.0" layoutY="14.0" prefHeight="26.0" prefWidth="54.0" text="Nome:" textFill="WHITE" />
-            <TextField layoutX="68.0" layoutY="15.0" prefHeight="26.0" prefWidth="283.0" />
-            <Label layoutX="27.0" layoutY="223.0" prefHeight="26.0" prefWidth="82.0" text="Foto de Perfil:" textFill="WHITE" />
-            <Button layoutX="107.0" layoutY="260.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" text="Criar Perfil" />
-            <Button layoutX="107.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" text="Adicionar Imagem" />
-         <Label layoutX="26.0" layoutY="77.0" prefHeight="26.0" prefWidth="64.0" text="Sobre Mim:" textFill="WHITE" />
-         <TextArea layoutX="91.0" layoutY="84.0" prefHeight="131.0" prefWidth="253.0" />
-         <TextField layoutX="68.0" layoutY="52.0" prefHeight="26.0" prefWidth="283.0" />
-         <Label layoutX="25.0" layoutY="52.0" prefHeight="26.0" prefWidth="54.0" text="Senha:" textFill="WHITE" />
-        </children>
-    </AnchorPane>
-</VBox>
+<StackPane fx:id="pagContent" alignment="TOP_CENTER" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.perfil.AddPerfilController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="649.0" maxWidth="800.0" prefHeight="239.0" prefWidth="516.0" spacing="30.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 20;">
+         <children>
+            <VBox alignment="CENTER" maxHeight="486.0" maxWidth="600.0" prefHeight="432.0" prefWidth="516.0">
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="25.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="30.0" />
+               </VBox.margin>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="32.0" prefWidth="498.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="61.0" text="Nickname:" textFill="#1aa7ec" />
+                        <TextField fx:id="nicknameField" prefHeight="26.0" prefWidth="340.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="31.0" prefWidth="498.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="54.0" text="Senha:" textFill="#1aa7ec" />
+                        <TextField fx:id="senhaField" prefHeight="26.0" prefWidth="339.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="441.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="62.0" text="Sobre mim:" textFill="#1aa7ec" />
+                        <TextArea fx:id="sobremimArea" prefHeight="63.0" prefWidth="330.0">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </TextArea>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="161.0" prefWidth="441.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="82.0" text="Foto Perfil:" textFill="#1aa7ec" />
+                        <Button fx:id="botaoImagem" mnemonicParsing="false" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: #1aa7ec;" text="Adicionar Imagem">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="imagemPreview" fitHeight="150.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="23.0" top="10.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="botaoVoltar" mnemonicParsing="false" onAction="#goToEntrarConta" prefHeight="26.0" prefWidth="57.0" style="-fx-background-color: #1aa7ec;" text="Voltar">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Region prefHeight="27.0" prefWidth="202.0" />
+                        <Button fx:id="botaoCriarConta" contentDisplay="CENTER" mnemonicParsing="false" onAction="#criarPerfil" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #1aa7ec;" text="Criar Conta">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="mensagemErro" alignment="CENTER" prefHeight="18.0" prefWidth="426.0" text="ERROR" textFill="RED">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <StackPane.margin>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="40.0" />
+         </StackPane.margin>
+      </VBox>
+      <Label fx:id="sucessLabel" alignment="CENTER" prefHeight="306.0" prefWidth="515.0" style="-fx-background-color: rgba(0,0,0,0.7); -fx-background-radius: 20;" text="Conta Criada!" textFill="#1aa7ec" visible="false">
+         <font>
+            <Font size="35.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="50.0" />
+         </StackPane.margin>
+      </Label>
+   </children>
+</StackPane>

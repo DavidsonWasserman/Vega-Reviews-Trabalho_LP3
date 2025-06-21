@@ -1,4 +1,4 @@
-package com.example.trabalho_LP3.controllers;
+package com.example.trabalho_LP3.controllers.exibicaoDetalhes;
 
 import com.example.trabalho_LP3.Review;
 import com.example.trabalho_LP3.ConexaoBanco;
@@ -14,7 +14,7 @@ import javafx.scene.layout.StackPane;
 import java.io.IOException;
 import java.sql.*;
 
-public class JogadorController {
+public class UsuarioController {
 
     @FXML private TextField nicknameField;
     @FXML private TextArea sobremimArea;
@@ -116,7 +116,7 @@ public class JogadorController {
 
         String reviewQuery = """
                     SELECT j.nome AS nome_jogo, r.nota, r.comentario
-                    FROM reviews r
+                    FROM reviews_jogos r
                     JOIN jogos j ON r.id_jogo = j.id
                     JOIN usuarios u ON r.id_usuario = u.id
                     WHERE u.nickname = ?

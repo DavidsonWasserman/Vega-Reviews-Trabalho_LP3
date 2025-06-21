@@ -19,7 +19,7 @@
             <Insets />
          </VBox.margin>
          </Label>
-         <Label style="-fx-font-size: 15px;" text="Confira abaixo os jogos mais bem avaliados e os jogadores com mais reviews publicadas!" textFill="#1aa7ec" wrapText="true" />
+         <Label style="-fx-font-size: 15px;" text="Confira abaixo os jogos mais bem avaliados e os usuários com mais reviews publicadas!" textFill="#1aa7ec" wrapText="true" />
 
         <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: rgba(0, 0, 0, 0.3); -fx-background-radius: 20;">
             <padding>
@@ -76,7 +76,7 @@
             <padding>
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
-            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Jogadores" textFill="#1aa7ec" />
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Top 5 Usuários" textFill="#1aa7ec" />
             <HBox alignment="CENTER" prefHeight="142.0" prefWidth="467.0" spacing="70.0">
                 <VBox fx:id="vboxJogador1" alignment="CENTER" onMouseClicked="#abrirDetalhesJogador" spacing="5">
                     <ImageView fx:id="imagemJogadorTop1" fitHeight="120" fitWidth="80" preserveRatio="true" />

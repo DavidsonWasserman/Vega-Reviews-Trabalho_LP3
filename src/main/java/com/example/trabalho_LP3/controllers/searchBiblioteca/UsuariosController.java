@@ -1,22 +1,21 @@
-package com.example.trabalho_LP3.controllers;
+package com.example.trabalho_LP3.controllers.searchBiblioteca;
 
 import com.example.trabalho_LP3.ConexaoBanco;
+import com.example.trabalho_LP3.controllers.exibicaoDetalhes.UsuarioController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class JogadoresController implements Initializable {
+public class UsuariosController implements Initializable {
 
 
     @FXML private TextField campoBusca;
@@ -64,9 +63,9 @@ public class JogadoresController implements Initializable {
 
     private void abrirDetalhesJogador(String nickName) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Jogador.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_View/Usuario.fxml"));
             Parent root = loader.load();
-            JogadorController controller = loader.getController();
+            UsuarioController controller = loader.getController();
             controller.setMainContent(mainContent);
             controller.setPaginaAnterior((Parent) mainContent.getChildren().get(0));
             controller.carregarDetalhes(nickName);
