@@ -1,10 +1,7 @@
 package com.example.trabalho_LP3.controllers.perfil;
 
 import com.example.trabalho_LP3.ConexaoBanco;
-import com.example.trabalho_LP3.Navegacao;
 import com.example.trabalho_LP3.UsuarioLogado;
-import com.example.trabalho_LP3.controllers.searchBiblioteca.JogosController;
-import com.example.trabalho_LP3.controllers.searchBiblioteca.UsuariosController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

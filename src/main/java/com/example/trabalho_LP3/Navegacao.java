@@ -1,6 +1,7 @@
 package com.example.trabalho_LP3;
 
 import com.example.trabalho_LP3.controllers.HomeController;
+import com.example.trabalho_LP3.controllers.add.AddReviewController;
 import com.example.trabalho_LP3.controllers.perfil.MeuPerfilController;
 import com.example.trabalho_LP3.controllers.searchBiblioteca.UsuariosController;
 import com.example.trabalho_LP3.controllers.exibicaoDetalhes.JogoController;
@@ -48,6 +49,9 @@ public class Navegacao {
                 ((HomeController) controller).setMainContent(mainContent);
             } else if (controller instanceof MeuPerfilController) {
                 ((MeuPerfilController) controller).setMainContent(mainContent);
+            } else if (controller instanceof AddReviewController) {
+                ((AddReviewController) controller).setMainContent(mainContent);
+
             }
 
             mainContent.getChildren().setAll(screen);

@@ -2,6 +2,7 @@ package com.example.trabalho_LP3.controllers.exibicaoDetalhes;
 
 import com.example.trabalho_LP3.ConexaoBanco;
 import com.example.trabalho_LP3.Review;
+import com.example.trabalho_LP3.controllers.add.AddReviewController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,11 @@ public class JogoController {
         } else {
             System.out.println("mainContent está null!");
         }
+    }
+
+    @FXML
+    private void botaoAddReview(){
+        abrirAddReview();
     }
 
     @FXML
@@ -70,6 +76,7 @@ public class JogoController {
     private Connection connection;
     private StackPane mainContent;
     private Parent paginaAnterior;
+    private String nomeJogo;
 
     public void setMainContent(StackPane mainContent){
         this.mainContent = mainContent;
@@ -80,6 +87,8 @@ public class JogoController {
     }
 
     public void carregarDetalhes(String nomeJogo) {
+        this.nomeJogo = nomeJogo;
+
         String query = """
                        SELECT j.nome, j.desenvolvedora, j.genero, AVG(r.nota) AS nota_media, COUNT(r.id) AS qtd, j.sinopse, j.imagem
                        FROM jogos j
@@ -187,6 +196,24 @@ public class JogoController {
                 System.out.println("mainContent está null!");
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void abrirAddReview(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_Add/Add_Reviews.fxml"));
+            Parent root = loader.load();
+
+            AddReviewController controller = loader.getController();
+            controller.setMainContent(mainContent);
+            controller.setPaginaAnterior((Parent) mainContent.getChildren().get(0));
+            controller.carregarDados(nomeJogo);
+
+            mainContent.getChildren().setAll(root);
+
+
+        } catch (IOException e){
             e.printStackTrace();
         }
     }

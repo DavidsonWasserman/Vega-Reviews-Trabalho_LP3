@@ -40,7 +40,7 @@ public class AddPerfilController {
     }
 
     @FXML
-    private void goToEntrarConta(ActionEvent event) {
+    private void goToEntrarConta() {
         loadScreen("/com/example/App_LP3/Telas_Perfil/Perfil_Entrar.fxml");
     }
 
@@ -110,7 +110,8 @@ public class AddPerfilController {
             int linhasAfetadas = stmt.executeUpdate();
             if (linhasAfetadas > 0) {
                 System.out.println("Usuario adicionado com sucesso!");
-                sucessLabel.setVisible(true);
+                mostrarAlerta("Conta Criada", "A conta foi criada com sucesso!");
+                goToEntrarConta();
             }
         } catch (SQLException e) {
             System.out.println("Erro ao adicionar usuario.");
@@ -118,6 +119,13 @@ public class AddPerfilController {
             mensagemErro.setVisible(true);
             e.printStackTrace();
         }
+    }
+    private void mostrarAlerta(String titulo, String mensagem) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensagem);
+        alert.showAndWait();
     }
 
     private void loadScreen(String fxmlPath) {

@@ -118,7 +118,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
                         <Region prefHeight="26.0" prefWidth="255.0" />
-                        <Button mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Adicionar Review">
+                        <Button mnemonicParsing="false" onAction="#botaoAddReview" style="-fx-background-color: #1aa7ec;" text="Adicionar Review">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
@@ -129,7 +129,7 @@
                   </HBox>
                </children>
                <padding>
-                  <Insets bottom="50.0" left="50.0" right="25.0" top="10.0" />
+                  <Insets bottom="25.0" left="50.0" right="25.0" top="10.0" />
                </padding>
                <VBox.margin>
                   <Insets />
@@ -137,7 +137,7 @@
             </VBox>
          </children>
          <StackPane.margin>
-            <Insets bottom="100.0" left="100.0" right="100.0" top="40.0" />
+            <Insets bottom="50.0" left="100.0" right="100.0" top="40.0" />
          </StackPane.margin>
       </VBox>
    </children>

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane fx:id="pagContent" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.exibicaoDetalhes.ReviewController">
+<StackPane fx:id="pagContent" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.add.AddReviewController">
    <children>
       <VBox alignment="CENTER" maxHeight="600.0" maxWidth="800.0" spacing="30.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 20;">
          <children>
@@ -40,17 +40,17 @@
                                     <Label prefHeight="18.0" prefWidth="30.0" text="Nota:" textFill="#1aa7ec" />
                                     <MenuButton fx:id="menuNota" alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Nota:">
                                        <items>
-                                          <MenuItem fx:id="itemNota0" mnemonicParsing="false" onAction="#ordenarAZ" style="-fx-text-fill: #1aa7ec;" text="0" />
-                                          <MenuItem fx:id="itemNota1" mnemonicParsing="false" onAction="#ordenarZA" style="-fx-text-fill: #1aa7ec;" text="1" />
-                                          <MenuItem fx:id="itemNota2" mnemonicParsing="false" onAction="#ordenarMaiorNota" style="-fx-text-fill: #1aa7ec;" text="2" />
-                                          <MenuItem fx:id="itemNota3" mnemonicParsing="false" onAction="#ordenarMenorNota" style="-fx-text-fill: #1aa7ec;" text="3" />
-                                          <MenuItem fx:id="itemNota4" mnemonicParsing="false" onAction="#ordenarMenorNota" style="-fx-text-fill: #1aa7ec;" text="4" />
-                                          <MenuItem fx:id="itemNota5" mnemonicParsing="false" onAction="#ordenarMenorNota" style="-fx-text-fill: #1aa7ec;" text="5" />
-                                          <MenuItem fx:id="itemNota6" mnemonicParsing="false" onAction="#ordenarMenorNota" style="-fx-text-fill: #1aa7ec;" text="6" />
-                                          <MenuItem fx:id="itemNota7" mnemonicParsing="false" onAction="#ordenarMenorNota" style="-fx-text-fill: #1aa7ec;" text="7" />
-                                          <MenuItem fx:id="itemNota8" mnemonicParsing="false" onAction="#ordenarMenorNota" style="-fx-text-fill: #1aa7ec;" text="8" />
-                                          <MenuItem fx:id="itemNota9" mnemonicParsing="false" onAction="#ordenarMenorNota" style="-fx-text-fill: #1aa7ec;" text="9" />
-                                          <MenuItem fx:id="itemNota10" mnemonicParsing="false" onAction="#ordenarMenorNota" style="-fx-text-fill: #1aa7ec;" text="10" />
+                                          <MenuItem fx:id="itemNota0" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="0" />
+                                          <MenuItem fx:id="itemNota1" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="1" />
+                                          <MenuItem fx:id="itemNota2" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="2" />
+                                          <MenuItem fx:id="itemNota3" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="3" />
+                                          <MenuItem fx:id="itemNota4" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="4" />
+                                          <MenuItem fx:id="itemNota5" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="5" />
+                                          <MenuItem fx:id="itemNota6" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="6" />
+                                          <MenuItem fx:id="itemNota7" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="7" />
+                                          <MenuItem fx:id="itemNota8" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="8" />
+                                          <MenuItem fx:id="itemNota9" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="9" />
+                                          <MenuItem fx:id="itemNota10" mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="10" />
                                        </items>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
@@ -85,6 +85,11 @@
                         <TextArea fx:id="reviewArea" prefHeight="130.0" prefWidth="410.0" />
                      </children>
                   </HBox>
+                  <Label fx:id="mensagemError" alignment="CENTER" prefHeight="18.0" prefWidth="586.0" text="ERROR" textFill="RED">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
                   <HBox alignment="BOTTOM_CENTER">
                      <children>
                         <Button fx:id="botaoVoltar" mnemonicParsing="false" onAction="#voltar" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #1aa7ec;" text="Voltar">
