@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="pagContent" prefHeight="0.0" prefWidth="796.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabalho_LP3.controllers.perfil.MeuPerfilController">
+    <children>
+        <VBox alignment="CENTER" maxHeight="600.0" maxWidth="800.0" spacing="30.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 20;">
+            <children>
+                <VBox alignment="CENTER" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0">
+                    <children>
+                        <HBox alignment="CENTER" minHeight="150.0" minWidth="510.0" prefHeight="100.0" prefWidth="510.0">
+                            <children>
+                                <Pane maxHeight="103.0" maxWidth="100.0" minHeight="18.0" minWidth="100.0" prefHeight="18.0" prefWidth="100.0" style="-fx-background-color: #1aa7ec;" HBox.hgrow="NEVER">
+                                    <children>
+                                        <ImageView fx:id="imageView" fitHeight="145.0" fitWidth="98.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets bottom="50.0" />
+                                    </HBox.margin>
+                                </Pane>
+                                <VBox prefHeight="100.0" prefWidth="374.0">
+                                    <children>
+                                        <HBox prefHeight="26.0" prefWidth="801.0">
+                                            <children>
+                                                <Label prefHeight="18.0" prefWidth="38.0" text="Nick:" textFill="#1aa7ec">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="nicknameField" prefHeight="26.0" prefWidth="318.0" />
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets left="5.0" top="25.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox minHeight="150.0" minWidth="300.0" prefHeight="150.0" prefWidth="300.0">
+                                            <children>
+                                                <Label text="Sobre mim:" textFill="#1aa7ec">
+                                                    <padding>
+                                                        <Insets right="5.0" />
+                                                    </padding>
+                                                </Label>
+                                                <TextArea fx:id="sobremimArea" prefHeight="135.0" prefWidth="290.0" />
+                                            </children>
+                                            <padding>
+                                                <Insets left="5.0" top="15.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" minHeight="150.0" minWidth="64.0" prefHeight="150.0" prefWidth="444.0">
+                            <children>
+                                <Label text="Reviews:" textFill="#1aa7ec" />
+                                <ScrollPane style="-fx-background-color: #1aa7ec; -fx-padding: 0;">
+                                    <content>
+                                        <ListView fx:id="reviewsList" prefHeight="150.0" prefWidth="410.0" />
+                                    </content>
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="DEFAULT" />
+                                    </cursor>
+                                </ScrollPane>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="35.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="416.0">
+                            <VBox.margin>
+                                <Insets left="45.0" right="60.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="30.0" left="50.0" right="25.0" top="30.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </VBox>
+            </children>
+            <StackPane.margin>
+                <Insets bottom="100.0" left="100.0" right="100.0" top="40.0" />
+            </StackPane.margin>
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+        </VBox>
+    </children>
+</StackPane>

@@ -2,6 +2,7 @@ package com.example.trabalho_LP3.controllers.perfil;
 
 import com.example.trabalho_LP3.ConexaoBanco;
 import com.example.trabalho_LP3.Navegacao;
+import com.example.trabalho_LP3.UsuarioLogado;
 import com.example.trabalho_LP3.controllers.searchBiblioteca.JogosController;
 import com.example.trabalho_LP3.controllers.searchBiblioteca.UsuariosController;
 import javafx.event.ActionEvent;
@@ -40,7 +41,7 @@ public class LoginPerfilController {
             return;
         }
 
-        String sql = "SELECT nickname, senha FROM usuarios WHERE nickname = ? AND senha = ?";
+        String sql = "SELECT id, nickname FROM usuarios WHERE nickname = ? AND senha = ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, usuario);
@@ -48,6 +49,10 @@ public class LoginPerfilController {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
+                int idUsuario = rs.getInt("id");
+                String nicknameUsuario = rs.getString("nickname");
+                UsuarioLogado.iniciarSessao(idUsuario, nicknameUsuario);
+
                 System.out.println("Login concluído!");
                 loadScreen("/com/example/App_LP3/Telas_Principais/Menu.fxml");
             } else {

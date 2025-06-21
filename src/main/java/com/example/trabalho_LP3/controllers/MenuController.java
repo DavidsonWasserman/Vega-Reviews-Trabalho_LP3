@@ -1,6 +1,7 @@
 package com.example.trabalho_LP3.controllers;
 
 import com.example.trabalho_LP3.Navegacao;
+import com.example.trabalho_LP3.controllers.perfil.MeuPerfilController;
 import com.example.trabalho_LP3.controllers.searchBiblioteca.UsuariosController;
 import com.example.trabalho_LP3.controllers.searchBiblioteca.JogosController;
 import javafx.fxml.FXML;
@@ -42,6 +43,24 @@ public class MenuController implements Initializable {
     @FXML
     private void goToAddJogo(ActionEvent event) {
         loadScreen("/com/example/App_LP3/Telas_Add/Add_Jogo.fxml");
+    }
+
+    @FXML
+    private void goToMeuPerfil(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/App_LP3/Telas_Perfil/Perfil_Ver.fxml"));
+            Parent screen = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof MeuPerfilController){
+                ((MeuPerfilController) controller).setMainContent(mainContent);
+            }
+
+            mainContent.getChildren().setAll(screen);
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar a tela de perfil:");
+            e.printStackTrace();
+        }
     }
 
     private void loadScreen(String fxmlPath) {

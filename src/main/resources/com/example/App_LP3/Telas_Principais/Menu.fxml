@@ -33,7 +33,7 @@
                      <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Criar Listas Jogos" />
                  </items>
                </Menu>
-               <Menu mnemonicParsing="false" text="Meu Perfil">
+               <Menu onAction="#goToMeuPerfil" mnemonicParsing="false" text="Meu Perfil">
                   <items>
                      <MenuItem mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Ver Perfil" />
                      <Menu mnemonicParsing="false" style="-fx-text-fill: #1aa7ec;" text="Minhas Listas">
