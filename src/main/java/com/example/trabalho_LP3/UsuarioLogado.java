@@ -21,8 +21,4 @@ public class UsuarioLogado {
         id = 0;
         nickname = null;
     }
-
-    public static boolean isLogado() {
-        return nickname != null;
-    }
 }

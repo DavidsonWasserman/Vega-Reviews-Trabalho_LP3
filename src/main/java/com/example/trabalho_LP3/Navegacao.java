@@ -51,7 +51,6 @@ public class Navegacao {
                 ((MeuPerfilController) controller).setMainContent(mainContent);
             } else if (controller instanceof AddReviewController) {
                 ((AddReviewController) controller).setMainContent(mainContent);
-
             }
 
             mainContent.getChildren().setAll(screen);
@@ -60,14 +59,6 @@ public class Navegacao {
             e.printStackTrace();
         }
     }
-
-    public static void goBack() {
-        if (!history.isEmpty()) {
-            String previousFxml = history.pop();
-            navigateTo(previousFxml);
-        }
-    }
-
     private static String getCurrentFxml(Node node) {
         return "";
     }
