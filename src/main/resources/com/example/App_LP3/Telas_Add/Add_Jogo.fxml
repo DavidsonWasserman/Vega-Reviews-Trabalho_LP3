@@ -77,6 +77,7 @@
                         <Insets />
                      </opaqueInsets>
                   </HBox>
+                  <Label fx:id="mensagemError" alignment="CENTER" prefHeight="18.0" prefWidth="560.0" text="Error" textFill="RED" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="botaoCancelar" mnemonicParsing="false" style="-fx-background-color: #1aa7ec;" text="Cancelar">

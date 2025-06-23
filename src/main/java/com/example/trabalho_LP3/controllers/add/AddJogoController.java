@@ -3,6 +3,7 @@ package com.example.trabalho_LP3.controllers.add;
 import com.example.trabalho_LP3.ConexaoBanco;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -25,12 +26,14 @@ public class AddJogoController {
     @FXML Button botaoAddJogo;
     @FXML Button botaoCancelar;
     @FXML ImageView imagemPreview;
+    @FXML Label mensagemError;
 
     @FXML
     public void initialize(){
         botaoAddJogo.setOnAction(event -> adicionarJogo());
         botaoImagem.setOnAction(event -> selecionarImagem());
         botaoCancelar.setOnAction(event -> limparCampos());
+        mensagemError.setVisible(false);
         connection = ConexaoBanco.getConnection();
     }
 
@@ -62,7 +65,8 @@ public class AddJogoController {
         String nomeImagem = (imagemSelecionada != null) ? imagemSelecionada.getName() : null;
 
         if (nome.isEmpty() || desenvolvedora.isEmpty() || genero.isEmpty() || sinopse.isEmpty()) {
-            System.out.println("Preencha todos os campos.");
+            mensagemError.setText("Preencha todos os campos.");
+            mensagemError.setVisible(true);
             return;
         }
 
@@ -90,7 +94,7 @@ public class AddJogoController {
 
             int linhasAfetadas = stmt.executeUpdate();
             if (linhasAfetadas > 0) {
-                System.out.println("Jogo adicionado com sucesso!");
+                mensagemError.setText("Jogo adicionado com sucesso!");
                 limparCampos();
             }
         } catch (SQLException e) {
