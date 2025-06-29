@@ -88,7 +88,7 @@ public class AddPerfilController {
 
         if (imagemSelecionada != null) {
             try {
-                File destino = new File("src/main/resources/com/example/App_LP3/imagens/covers/" + nomeImagem);
+                File destino = new File("src/main/resources/com/example/App_LP3/imagens/pfp/" + nomeImagem);
                 if (!destino.exists()) {
                     Files.copy(imagemSelecionada.toPath(), destino.toPath());
                     System.out.println("Imagem copiada para: " + destino.getPath());
