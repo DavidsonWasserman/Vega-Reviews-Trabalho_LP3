@@ -1,7 +1,5 @@
 O arquivo .jar está em "C:\Users\david\IdeaProjects\Vega_Reviews\out\artifacts\Java_LPIII_Trabalho_jar"
 
-por problemas na execução do FXML em versões mais novas do java use:
+por problemas na execução do FXML em versões mais novas do java use: 
 
-java --module-path "C:\javafx-sdk-24\lib" --add-modules javafx.controls,javafx.fxml -jar Java_LPIII_Trabalho.jar
-
-no cmd para executar o app.
+"java --module-path "C:\javafx-sdk-24\lib" --add-modules javafx.controls,javafx.fxml -jar Java_LPIII_Trabalho.jar" no cmd para executar o app.
